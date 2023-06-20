@@ -1,0 +1,16 @@
+import React from 'react'
+import LeftBar from '../common-components/LeftBar/LeftBar'
+import RightBar from '../common-components/RightBar/RightBar'
+import HomeFeed from './HomeFeed'
+
+const Home = () => {
+  return (
+    <div className=' flex justify-between gap-4' >
+        <LeftBar/>
+        <HomeFeed/>
+        <RightBar/>
+    </div>
+  )
+}
+
+export default Home
