@@ -39,13 +39,14 @@ const GettingStarted = () => {
     let hor=gsap.to(sections,{
       xPercent:-100*(sections.length-1),
       ease:'none',
+      scrub:2,
+
       scrollTrigger:{
         trigger:'.chatcircle-cards',
         pin:true,
         start:'top top',
         end:'+=4000',
-        scrub:1,
-        // snap:1/(sections.length-1),
+        scrub:2,
         snap: {
           snapTo: 1 / (sections.length - 1),
           duration: 0.6,
@@ -160,7 +161,7 @@ const GettingStarted = () => {
 
   },[])
   return (
-    <div className="  pt-32 ">
+    <div className="  pt-32 " id="getting-started">
       <div className="getting-started-text translate-y-10 text-center w-full  overflow-hidden opacity-0">
         <div className=" font-semibold relative ">
           <h2 className=" anton-fot text-[150px] tracking-widest step-running-text break-keep">
@@ -168,11 +169,9 @@ const GettingStarted = () => {
           </h2>
         </div>
       </div>
-      <div className="chatcircle-cards-header text-[4.8rem] mt-[100px] mb-[5rem] translate-y-[50px] opacity-0 font-semibold text-center">
-        <h2 className="chatcircle-cards-h2">
+      <div className="chatcircle-cards-header text-[4.8rem] mt-[100px] mb-[5rem] translate-y-[50px] opacity-0 font-semibold text-center flex justify-center w-full">
+        <h2 className="chatcircle-cards-h2 w-[60%]">
           <span className="text-reveal-cards"><span className="gradient-text">Experience</span></span> a seamless entry
-        </h2>
-        <h2 className="-mt-6">
           into your <span className="text-reveal-cards"><span className="gradient-text cards-text-reveal">circle</span></span>
         </h2>
       </div>

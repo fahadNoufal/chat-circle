@@ -5,6 +5,7 @@ import profile2 from "../../WebApp-images/profiles/profile8.png";
 import profile3 from "../../WebApp-images/profiles/profile3.png";
 import profile4 from "../../WebApp-images/profiles/profile5.png";
 import sendIcon from '../../WebApp-images/sendIcon.svg'
+import {Link} from 'react-router-dom'
 
 
 const Room = () => {
@@ -31,10 +32,10 @@ const Room = () => {
 
   const RoomMember=({profile,username})=>{
     return(
-        <div className="member-card flex tracking-widest font-semibold bg-[#696969] cursor-pointer p-[9px] rounded-[10px] bg-opacity-25 text-blueRoom gap-[12px] pl-3 items-center">
+        <Link to='/app/profile' className="member-card flex tracking-widest font-semibold bg-[#696969] cursor-pointer p-[9px] rounded-[10px] bg-opacity-25 text-blueRoom gap-[12px] pl-3 items-center">
             <ProfilePic profile={profile} width='47' />
-            <span>{username}</span>
-        </div>
+            <span className="pr-6 overflow-hidden">{username}</span>
+        </Link>
     )
   }
 
@@ -42,12 +43,12 @@ const Room = () => {
     return (
       <div className="message-box relative px-[30px] py-[11px] bg-[#0c0c0c] rounded-[6px] ">
         <div className="flex justify-between items-center">
-          <div className="msg-profile flex items-center gap-2">
+          <Link to='/app/profile' className="msg-profile flex items-center gap-2">
             <ProfilePic profile={profile} width="30" />
             <span className=" text-[0.8rem] text-blueRoom tracking-[2px] font-medium ">
               {username}
             </span>
-          </div>
+          </Link>
           <span className="msg-timesince text-[#9c9c9c] text-[0.7rem] tracking-wider">
             {timeSince} ago
           </span>
@@ -63,8 +64,8 @@ const Room = () => {
   let members= membersList.map((member,index) => (<RoomMember key={index} {...member} />));
 
   return (
-    <div className="flex justify-center h-[99svh] -mt-[90px] overflow-hidden pt-[40px] web-app">
-      <div className="flex  justify-between max-w-[1300px] px-8 gap-24 mt-[65px]">
+    <div className="flex justify-center h-[99svh] -mt-[75px] overflow-hidden pt-[40px] web-app">
+      <div className="flex  justify-between max-w-[1400px] px-8 gap-24 mb-4 mt-[65px]">
         <div className="room-container flex flex-grow flex-col rounded-[20px] max-w-[866px] h-full relative overflow-hidden">
           <div className=" tracking-[5px] text-[1.7rem] font-bold   bg-[#696969] py-[22px] pl-[56px]">
             Room
@@ -82,10 +83,10 @@ const Room = () => {
               <span className="text-[1rem] tracking-[2px] text-[#c7c7c7] font-medium">
                 Created by
               </span>
-              <span className="py-1 pl-2 pr-3 bg-[#696969] font-medium italic tracking-[1px] rounded-[10px] gap-2 text-blueRoom text-[0.9rem] bg-opacity-25 flex items-center ">
+              <Link to='/app/profile' className="py-1 pl-2 pr-3 bg-[#696969] font-medium italic tracking-[1px] rounded-[10px] gap-2 text-blueRoom text-[0.9rem] bg-opacity-25 flex items-center ">
                 <ProfilePic profile={profile1} width="38" />
                 Amore Tore
-              </span>
+              </Link>
             </div>
             <div className="room-dec-cont">
               <span className=" text-[#979797] italic font-bold text-[1.45rem] opacity-70 ">
@@ -112,8 +113,8 @@ const Room = () => {
 
           </div>
         </div>
-        <div className=" w-[325px] rounded-[20px] overflow-hidden flex flex-col ">
-            <div className=" tracking-[5px] text-[1.7rem] font-bold   bg-[#696969] py-[22px]  text-center w-full">
+        <div className=" w-[400px] rounded-[20px] overflow-hidden flex h-[70%] flex-col ">
+            <div className=" tracking-[5px] text-[1.7rem] font-semibold bg-[#696969] py-[22px]  text-center w-full">
                 Members
             </div>
             <div className="members-container overflow-scroll rounded-b-[20px] flex flex-col p-[22px] gap-[10px] bg-[#1e1e1e] w-full ">

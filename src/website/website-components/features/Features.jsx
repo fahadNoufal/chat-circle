@@ -32,7 +32,7 @@ const Features = () => {
   return (
     <div
       id="features"
-      className=" features flex flex-col justify-center items-center  mb-[250px] pb-10 overflow-hidden"
+      className=" features flex flex-col justify-center items-center  pb-10 overflow-hidden"
     >
       <div className="running-container  mt-0 mb-0  opacity-[0.15]">
         <div className="running-text text-[380px] text-center w-full bg-black border-x-0 pl-4">

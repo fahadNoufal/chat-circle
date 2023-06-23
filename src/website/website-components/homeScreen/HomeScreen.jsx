@@ -35,7 +35,7 @@ const HomeScreen = () => {
 
 
   return (
-    <div className='home-page w-full z-10 relative flex h-[100svh] overflow-hidden'>
+    <div className='home-page w-full z-10 relative flex h-[100svh] overflow-hidden' id='home-screen'>
         <div className=" home-left-section relative flex flex-1 bg-yellow overflow-hidden h-full -mr-8">
             <span className=' absolute -rotate-90 text-[310px] anton-font -left-[360px] opacity-30 bottom-[240px]'>
                 Connect

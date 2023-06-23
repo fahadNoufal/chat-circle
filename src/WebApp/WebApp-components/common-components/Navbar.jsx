@@ -1,9 +1,17 @@
-import React from "react";
 import ccLogo from "../../WebApp-images/chatcircle-logo.svg";
 import searchIcon from "../../WebApp-images/search-icon.svg";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import {useLocation} from 'react-router-dom'
+import React, { useEffect } from 'react'
 
 const Navbar = () => {
+
+  const {pathname}=useLocation()
+
+  useEffect(()=>{
+      window.scrollTo({top:0})
+  },[pathname])
+
   return (
     <div className="relative ">
       <nav className="app-navbar text-[1.4rem] font-semibold py-6 px-12  flex  items-center justify-between">
@@ -13,9 +21,10 @@ const Navbar = () => {
           </Link>
           <div className="ml-[28%] translate-x-[-100px] rounded-[30px] bg-black py-1 pl-[20px]  flex  gap-4">
             <input
+              spellCheck='false'
               placeholder="Type here..."
               type="text"
-              className=" pl-2 -mt-1 bg-transparent w-full  xl:w-auto outline-none placeholder:text-[#595959] text-[#c9c9c9] placeholder:tracking-[4px] placeholder:font-semibold placeholder:text-[1.1rem] text-[1.1rem]"
+              className=" pl-2  bg-transparent w-full  xl:w-auto outline-none placeholder:text-[#595959] text-[#c9c9c9] placeholder:tracking-[4px] placeholder:font-semibold placeholder:text-[1.1rem] text-[1.1rem]"
             />
             <button
               type="submit"

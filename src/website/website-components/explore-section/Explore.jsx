@@ -45,7 +45,7 @@ const Explore = () => {
 
   
   return (
-    <div className=' explore relative overflow-hidden w-full mt-40  '>
+    <div className=' explore relative overflow-hidden w-full mt-52   ' id= 'explore'>
         <div className=' flex justify-center absolute top-8 z-[2] right-20 left-20 '>
             <img src={explore} className=' opacity-0 explore-text text-center' alt="" />
         </div>
