@@ -38,7 +38,7 @@ const Feed = () => {
         profile:profile1,
         username:'Peter Aurthor',
         timeSince:'23 minutes',
-        roomName:'Python for everybody',
+        roomName:'Python for Begginers',
         roomDescription:'Hey developers, lets join together and exchange our knowledge and doubts on topics and lets get to know each other',
         membersNo:14,
         topic:'python'
@@ -47,7 +47,7 @@ const Feed = () => {
         profile:profile2,
         username:'John Matich',
         timeSince:'44 minutes',
-        roomName:'JavaScript and frontend development',
+        roomName:'Chat gpt and its features',
         roomDescription:'Hey developers, lets join together and exchange our knowledge and doubts on topics and lets get to know each other.Hey developers, lets join together and exchange our knowledge and doubts on topics and lets get to know each other',
         membersNo:27,
         topic:'JavaScipt'
@@ -56,7 +56,7 @@ const Feed = () => {
         profile:profile3,
         username:'Arion Roben',
         timeSince:'1 hr 5 minutes',
-        roomName:'Time travel to the past',
+        roomName:'Time travel ',
         roomDescription:'Lets join together and exchange our knowledge and doubts on topics and lets get to know each other',
         membersNo:9,
         topic:'time'

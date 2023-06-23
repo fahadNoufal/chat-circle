@@ -137,3 +137,8 @@ h3.connect-card{
     /* background-color: #7333da; */
     background-color: #EA7F00;
 }
+.home-left-bg{
+    background-image: url('./website-images/HomePageLeft.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

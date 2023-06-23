@@ -63,7 +63,7 @@ const Room = () => {
   let members= membersList.map((member,index) => (<RoomMember key={index} {...member} />));
 
   return (
-    <div className="flex justify-center h-[99svh] -mt-[90px] overflow-hidden pt-[40px]">
+    <div className="flex justify-center h-[99svh] -mt-[90px] overflow-hidden pt-[40px] web-app">
       <div className="flex  justify-between max-w-[1300px] px-8 gap-24 mt-[65px]">
         <div className="room-container flex flex-grow flex-col rounded-[20px] max-w-[866px] h-full relative overflow-hidden">
           <div className=" tracking-[5px] text-[1.7rem] font-bold   bg-[#696969] py-[22px] pl-[56px]">

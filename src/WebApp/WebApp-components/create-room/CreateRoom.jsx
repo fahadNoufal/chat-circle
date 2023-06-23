@@ -8,7 +8,7 @@ import float4 from '../../../website/website-images/create-room-floating-4.png'
 
 const CreateRoom = () => {
   return (
-    <div className=' create-room -mt-[70px] h-[95svh] w-full flex justify-center items-center'>
+    <div className=' create-room -mt-[70px] h-[100svh] w-full flex justify-center items-center web-app'>
         <div className=" create-room-container max-w-[830px] relative rounded-[25px] mt-20  w-full  ">
             <div className=" bg-gradient-to-r rounded-t-[25px] to-[rgb(0,0,0)] py-4 px-10 text-[1.7rem] text-[#818181] flex justify-between items-center tracking-[2px] font-semibold from-[rgba(27,27,27,0.87)] ">
               <span>Update Room</span>

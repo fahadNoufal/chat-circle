@@ -16,7 +16,12 @@
 }
 .app-navbar{
     background-color: #343336;
-    position: sticky;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    right: 0;
+
 }
 .left-bar{
     border-bottom-right-radius: 20px;

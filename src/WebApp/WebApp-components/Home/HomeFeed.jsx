@@ -2,6 +2,7 @@ import React from 'react'
 import Feed from '../common-components/Feed'
 import ProfilePic from '../common-components/ProfilePic'
 import profile1 from '../../WebApp-images/profiles/profile3.png'
+import { Link } from 'react-router-dom'
 
 const HomeFeed = () => {
   return (
@@ -17,7 +18,7 @@ const HomeFeed = () => {
                     </div>
                     <div className=" flex justify-between gap-4  items-center">
                         <span className='text-[0.7rem] tracking-[3px] font-light'>Create your own room</span>
-                        <button className='bg-[#189cb9] text-[0.85rem] py-1 rounded-[10px] px-3'>Create Room</button>
+                        <Link to='/app/create-room'><button className='bg-[#189cb9] text-[0.85rem] py-1 rounded-[10px] px-3'>Create Room</button></Link>
                     </div>
                 </div>
             </div>
