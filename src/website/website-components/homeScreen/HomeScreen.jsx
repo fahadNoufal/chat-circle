@@ -36,7 +36,7 @@ const HomeScreen = () => {
 
   return (
     <div className='home-page w-full z-10 relative flex h-[100svh] overflow-hidden' id='home-screen'>
-        <div className=" home-left-section relative flex flex-1 bg-yellow overflow-hidden h-full -mr-8">
+        <div className=" home-left-section home-left-bg relative flex flex-1 bg-yellow overflow-hidden h-full -mr-8">
             <span className=' absolute -rotate-90 text-[310px] anton-font -left-[360px] opacity-30 bottom-[240px]'>
                 Connect
             </span>
@@ -49,12 +49,12 @@ const HomeScreen = () => {
             <div className="home-text flex-grow  -ml-[3%] flex flex-col justify-center w-[1%]  " >
                 <div className=' relative '>
                     <span className=' absolute flex items-center w-full h-full' >
-                        <span className=' text-[5.7rem] text-[#f9f9f9] font-extrabold tracking-[3px] '>THE CIRCLE</span>
+                        <span className=' text-[5.7rem] text-[#f9f9f9] font-extrabold tracking-[3px] z-[10] gradient-text  '>THE CIRCLE</span>
                     </span>
-                    <h2 className=' anton-font text-[300px] tracking-wider opacity-30 '>03</h2>
+                    <h2 className=' anton-font text-[300px] tracking-wider opacity-30 z-[-10] '>03</h2>
                 </div>
-                <div className='flex pl-2 tracking-[3px] -mt-[80px] gap-[10px] text-[1.2rem] font-bold items-center' >
-                    <span className=' opacity-40 '>
+                <div className='flex pl-2  tracking-[3px] -mt-[80px] gap-[10px] text-[1.2rem] font-bold items-center' >
+                    <span className='  opacity-40 '>
                         STEP ENTRY
                     </span>
                     <img src={rightDoubleArrow} className='mt-1' alt="" />

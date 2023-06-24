@@ -13,23 +13,23 @@ const Navbar = () => {
             </div>
             <div className="nav-links flex flex-[2] pr-[4rem] justify-between items-center">
                 <ul className=' flex gap-[45%] pl-[100px]  text-[1.15rem] font-medium ' >
-                    <li>
-                        <Link onClick={()=>{window.scrollTo({top:0,behavior:'smooth',duration:1500})}} >
+                    <li className=' transition-all' >
+                        <Link className='cursor-pointer hover:text-yellow ' to="home-screen" spy={true} smooth={true} offset={-720} duration={1500} >
                             Home
                         </Link>
                     </li>
-                    <li>
-                        <Link to="features" spy={true} smooth={true} offset={430} duration={1500} >
+                    <li className=' transition-all' >
+                        <Link className='cursor-pointer hover:text-yellow ' to="features" spy={true} smooth={true} offset={330} duration={1500} >
                             Features
                         </Link>
                     </li>
-                    <li>
+                    <li className=' cursor-pointer hover:text-yellow transition-all' >
                         <Link to="join" spy={true} smooth={true} offset={-180} duration={1500} >
                             Join
                         </Link>
                     </li>
-                    <li>
-                        <Link to="contact" spy={true} smooth={true} offset={-240} duration={1500} >
+                    <li className=' transition-all' >
+                        <Link className='cursor-pointer hover:text-yellow ' to="contact" spy={true} smooth={true} offset={-240} duration={1500} >
                             Contact
                         </Link>
                     </li>

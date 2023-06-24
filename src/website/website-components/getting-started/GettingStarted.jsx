@@ -162,15 +162,11 @@ const GettingStarted = () => {
   },[])
   return (
     <div className="  pt-32 " id="getting-started">
-      <div className="getting-started-text translate-y-10 text-center w-full  overflow-hidden opacity-0">
-        <div className=" font-semibold relative ">
-          <h2 className=" anton-fot text-[150px] tracking-widest step-running-text break-keep">
-        GETTING STARTED
-          </h2>
-        </div>
+      <div className=''>
+        
       </div>
-      <div className="chatcircle-cards-header text-[4.8rem] mt-[100px] mb-[5rem] translate-y-[50px] opacity-0 font-semibold text-center flex justify-center w-full">
-        <h2 className="chatcircle-cards-h2 w-[60%]">
+      <div className="chatcircle-cards-header text-[4.2rem] mt-[100px] mb-[2rem] translate-y-[50px] opacity-0 font-semibold text-center flex justify-center w-full">
+        <h2 className="chatcircle-cards-h2 w-[50%]">
           <span className="text-reveal-cards"><span className="gradient-text">Experience</span></span> a seamless entry
           into your <span className="text-reveal-cards"><span className="gradient-text cards-text-reveal">circle</span></span>
         </h2>

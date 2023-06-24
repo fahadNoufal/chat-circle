@@ -32,14 +32,13 @@ const Explore = () => {
         scrub:2,
         end:'50% 20%',
     }})
-    gsap.to('.explore-reveal',{
-        y:0,duration:0.5,ease:'power3.easeInOut',scrollTrigger:{
-            trigger:'.explore-reveal',
-            start:'top bottom',
-            end:'top top',
-            toggleActions:'play play play reverse  ',
-        }
-    })
+
+    gsap.to('.explore-reveal',{y:0, duration:0.6,opacity:1,scrollTrigger:{
+        trigger:'.explore-reveal',
+        start:'50% bottom',
+        end:'top top',
+        toggleActions:'play play play reverse'
+      }})
 
   },[])
 
@@ -52,8 +51,8 @@ const Explore = () => {
         <div className="flex justify-center pt-24">
             <img src={desktop} className='z-[5] relative w-[60%]' alt="" />
         </div>
-        <div className=" explore-reveal  text-[4.5rem] translate-y-[100px] text-center pt-4 font-semibold">
-            <div className="text-reveal-cards transition-transform " >
+        <div className=" explore-reveal  text-[4.2rem] text-center pt-4 translate-y-[50px] opacity-0 font-semibold">
+            <div className="text-reveal-cards  transition-transform " >
                 <span className="gradient-text">Connect </span>
                 with new  
                 <span className="gradient-text"> people</span> 
