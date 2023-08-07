@@ -12,15 +12,18 @@ const Navbar = () => {
       window.scrollTo({top:0})
   },[pathname])
 
+  
+
   return (
     <div className="relative ">
-      <nav className="app-navbar text-[1.4rem] font-semibold py-6 px-12  flex  items-center justify-between">
+      <nav className="app-navbar text-[1.4rem] font-medium py-6 px-12  flex  items-center justify-between">
         <div className="nav-logo self-start flex">
           <Link to='/app'  >
             <img src={ccLogo} className=" h-11 " alt="" />
           </Link>
-          <div className="ml-[28%] translate-x-[-100px] rounded-[30px] bg-black py-1 pl-[20px]  flex  gap-4">
+          <form method="GET" target="/app" className="ml-[28%] translate-x-[-100px] rounded-[30px] bg-black py-1 pl-[20px]  flex  gap-4">
             <input
+              name="q"
               spellCheck='false'
               placeholder="Type here..."
               type="text"
@@ -28,11 +31,11 @@ const Navbar = () => {
             />
             <button
               type="submit"
-              className="py-1 pr-8 pl-4  flex items-center gap-1 bg-yellow text-black rounded-[20px] mr-1 text-[1rem]"
+              className="py-1 pr-8 pl-4  flex items-center gap-1 bg-yellow text-black rounded-[20px] mr-1 text-[1rem] "
             >
-              Search <img src={searchIcon} className="w-7" alt="" />{" "}
+              Search <img src={searchIcon} className="w-7 -mt-1" alt="" />{" "}
             </button>
-          </div>
+          </form>
         </div>
         <ul className="flex gap-[3.56rem] text-[1rem] text-[#D7D7D7] font-normal ">
           <NavLink to='/app'>

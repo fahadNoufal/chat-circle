@@ -20,6 +20,7 @@ const HomeScreen = () => {
     homeScrollTl.to(['.home-left-section','.home-img-container'],{x:'-150%'})
     homeScrollTl.to('.home-text' ,{x:'110%'},'<')
     homeScrollTl.to(['.home-play-navigation','.gallery-dots'],{y:200},'<')
+    homeScrollTl.to('.nav-logo',{opacity:1,x:0})
     
     ScrollTrigger.create({
       trigger:'.home-page',
@@ -36,25 +37,25 @@ const HomeScreen = () => {
 
   return (
     <div className='home-page w-full z-10 relative flex h-[100svh] overflow-hidden' id='home-screen'>
-        <div className=" home-left-section home-left-bg relative flex flex-1 bg-yellow overflow-hidden h-full -mr-8">
+        <div className=" home-left-section home-left-bg  relative flex flex-1 bg-yellow overflow-hidden h-full -mr-8">
             <span className=' absolute -rotate-90 text-[310px] anton-font -left-[360px] opacity-30 bottom-[240px]'>
                 Connect
             </span>
             
         </div>
         <div className="flex relative flex-[2]">
-            <div className=' home-img-container -ml-[28%] flex justify-center items-center '>
+            <div className=' home-img-container -ml-[28%] overflow-hidden rounded-3xl flex justify-center items-center '>
                 <img src={homeImg1} className=' mt-20 w-[95%]' alt="" />
             </div>
             <div className="home-text flex-grow  -ml-[3%] flex flex-col justify-center w-[1%]  " >
                 <div className=' relative '>
                     <span className=' absolute flex items-center w-full h-full' >
-                        <span className=' text-[5.7rem] text-[#f9f9f9] font-extrabold tracking-[3px] z-[10] gradient-text  '>THE CIRCLE</span>
+                        <span className=' text-[5.7rem] text-[#e6e6e6] tracking-[3px] z-[10] font-black'>THE CIRCLE</span>
                     </span>
                     <h2 className=' anton-font text-[300px] tracking-wider opacity-30 z-[-10] '>03</h2>
                 </div>
                 <div className='flex pl-2  tracking-[3px] -mt-[80px] gap-[10px] text-[1.2rem] font-bold items-center' >
-                    <span className='  opacity-40 '>
+                    <span className='opacity-40 '>
                         STEP ENTRY
                     </span>
                     <img src={rightDoubleArrow} className='mt-1' alt="" />
@@ -80,7 +81,7 @@ const HomeScreen = () => {
                 <div className="w-3 aspect-square rounded-full bg-white"></div>
                 <div className="w-3 aspect-square rounded-full bg-white"></div>
         </div>
-        <div className=" home-play-navigation flex absolute bottom-16 right-[4rem] ">
+        <div className=" home-play-navigation flex absolute bottom-6 right-[4rem] ">
                 <div className='ml-auto flex text-[1.1rem] gap-[80px] opacity-80'>
                     <div className="home-play-navigation flex gap-8">
                         <span className='flex items-center gap-5'>

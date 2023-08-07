@@ -5,10 +5,12 @@ import profile2 from "../../WebApp-images/profiles/profile8.png";
 import profile3 from "../../WebApp-images/profiles/profile3.png";
 import profile4 from "../../WebApp-images/profiles/profile5.png";
 import sendIcon from '../../WebApp-images/sendIcon.svg'
-import {Link} from 'react-router-dom'
+import {Link, useLoaderData} from 'react-router-dom'
 
 
 const Room = () => {
+
+  const {roomItem,room_messages}=useLoaderData()
 
   let messageList=[
     {profile:profile1,username:'Amore Tore', timeSince:'3 minutes',message:'Hello guysss...!!!'},
@@ -60,8 +62,8 @@ const Room = () => {
     );
   };
 
-  let messages=messageList.map((item,index) => (<MessageBox key={index} {...item} />))
-  let members= membersList.map((member,index) => (<RoomMember key={index} {...member} />));
+  let messages=room_messages.map((item) => (<MessageBox key={item.id} profile='' username={item.user_id.username} timeSince={item.timesince_field}  message={item.body} />))
+  let members= roomItem.participants.map((member) => (<RoomMember key={member.id} {...member} />));
 
   return (
     <div className="flex justify-center h-[99svh] -mt-[75px] overflow-hidden pt-[40px] web-app">
@@ -72,20 +74,20 @@ const Room = () => {
           </div>
           <div className=" px-[50px] gap-[10px] pt-[40px] pb-[20px] overflow-hidden flex flex-col h-full flex-grow bg-[#1e1e1e]">
             <div className="flex mb-1 justify-between items-center">
-              <h1 className=" text-[1.8rem] font-semibold tracking-[3px] text-blueRoom  ">
-                Python for everybody
+              <h1 className=" text-[1.8rem] font-semibold tracking-[3px] text-blueRoom  ">  
+                {roomItem.name}
               </h1>
               <span className=" text-[#848484] tracking-[2px] ">
-                2 days 9 hours ago
+                {roomItem.timesince_field} ago
               </span>
             </div>
             <div className="created-by italic flex items-center gap-4 mt">
               <span className="text-[1rem] tracking-[2px] text-[#c7c7c7] font-medium">
                 Created by
               </span>
-              <Link to='/app/profile' className="py-1 pl-2 pr-3 bg-[#696969] font-medium italic tracking-[1px] rounded-[10px] gap-2 text-blueRoom text-[0.9rem] bg-opacity-25 flex items-center ">
+              <Link to={`/app/user/${roomItem.host.id}`} className="py-1 pl-2 pr-3 bg-[#696969] font-medium italic tracking-[1px] rounded-[10px] gap-2 text-blueRoom text-[0.9rem] bg-opacity-25 flex items-center ">
                 <ProfilePic profile={profile1} width="38" />
-                Amore Tore
+                {roomItem.host.username}
               </Link>
             </div>
             <div className="room-dec-cont">
@@ -93,13 +95,11 @@ const Room = () => {
                 Description
               </span>
               <p className=" text-[1.05rem] mt-[10px] leading-6 italic tracking-widest ">
-                This is a room created for the best students to learn and make
-                good progress in their jobs and careers
+                {roomItem.description}
               </p>
             </div>
             <div className="messages-container mt-2 w-full pt-[38px] rounded-[16px] overflow-scroll bg-[#040404] ">
                 <div className=" messages-list px-[30px] flex flex-col gap-2 flex-grow mb-12 ">
-                    {messages}
                     {messages}
                 </div>
             </div>
@@ -119,8 +119,6 @@ const Room = () => {
             </div>
             <div className="members-container overflow-scroll rounded-b-[20px] flex flex-col p-[22px] gap-[10px] bg-[#1e1e1e] w-full ">
                 {members}
-                {members}
-                {members}
             </div>
         </div>
       </div>
@@ -129,3 +127,9 @@ const Room = () => {
 };
 
 export default Room;
+
+export const roomLoader=async({params})=>{
+  const {id}=params
+  const res= await fetch(`http://localhost:8000/api/room/${id}/`)
+  return res.json()
+}

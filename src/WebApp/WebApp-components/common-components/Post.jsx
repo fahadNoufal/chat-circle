@@ -3,7 +3,7 @@ import ProfilePic from './ProfilePic'
 import membersIcon from '../../WebApp-images/joinedPeople.svg'
 import { Link } from 'react-router-dom'
 
-const Post = ({profile,username,timeSince,roomName,roomDescription,membersNo,topic}) => {
+const Post = ({profile,username,timeSince,roomName,roomDescription,membersNo,topic,id}) => {
   return (
     <div className=' flex gap-4 p-[30px] max-w-[940px] rounded-[21px] bg-[#1e1e1e] pr-[60px]'>
         <div className="post-prof -ml-2 cursor-pointer">
@@ -11,14 +11,14 @@ const Post = ({profile,username,timeSince,roomName,roomDescription,membersNo,top
                 <ProfilePic profile={profile} width='60'/>
             </Link>
         </div>
-        <div className="post-details flex flex-col gap-[10px]">
+        <div className="post-details flex w-full flex-col gap-[10px]">
             <div className="post-author flex  justify-between items-center mt-[15px]">
                 <Link to='profile'>
-                    <span className=' text-[1.1rem] tracking-[2px] font-semibold  cursor-pointer'>{username}</span>
+                    <span className=' text-[1.1rem] tracking-[2px] font-semibold  cursor-pointer'> {username}</span>
                 </Link>
                 <span className=' text-[12px] text-[#c0c0c0] cursor-default '>{timeSince} ago</span>
             </div>
-            <Link to='/app/room'>
+            <Link to={`room/${id}`}>
                 <div className="about-post flex flex-col gap-[10px] ">
                     <h2 className=' text-[1.5rem] tracking-[2px] text-[#71bbcb] font-semibold  '>{roomName}</h2>
                     <p className=' font-normal tracking-[2px] text-[0.9rem]  '>

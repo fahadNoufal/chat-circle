@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import profile1 from '../../../WebApp-images/profiles/profile1.png'
 import profile2 from '../../../WebApp-images/profiles/profile2.png'
 import profile3 from '../../../WebApp-images/profiles/profile3.png'
 import profile4 from '../../../WebApp-images/profiles/profile4.png'
 import ProfilePic from "../ProfilePic";
 import moreIcon from '../../../WebApp-images/expand_more.svg'
+import { useLoaderData } from "react-router-dom";
 
 // import profile5 from '../../../WebApp-images/profiles/profile5.png'
 // import profile6 from '../../../WebApp-images/profiles/profile6.png'
 // import profile7 from '../../../WebApp-images/profiles/profile7.png'
 
-
-
 const LeftBar = () => {
+
+  const {topics}=useLoaderData()
+
+  
   let topicDetails = [
     { topic: "Python", count: 9 },
     { topic: "JavaScript", count: 23 },
@@ -29,17 +32,18 @@ const LeftBar = () => {
   ]
 
 
+
   const TopicItem = ({ topic, count }) => {
     return (
       <li>
-        <div className="py-[12px] shadow-lg -ml-2 pl-[25px] pr-[14px] flex rounded-[14px] items-center bg-gradient-to-r to-[rgba(0,0,0,0.5)] from-[rgba(0,0,0,0.15)] justify-between">
+        <a href={`?=${topic}`} className="py-[12px] shadow-lg -ml-2 pl-[25px] pr-[14px] flex rounded-[14px] items-center bg-gradient-to-r to-[rgba(0,0,0,0.5)] from-[rgba(0,0,0,0.15)] justify-between">
           <span className="text-[1rem] text-[#9d9d9d] tracking-[3px]">
             {topic}
           </span>
           <div className="bg-[#222222] min-w-[45px] flex text-[1rem] text-[#189cb9] justify-center items-center rounded-[5px] px-[12px] h-[35px]">
             {count}
           </div>
-        </div>
+        </a>
       </li>
     );
   };
@@ -57,8 +61,8 @@ const LeftBar = () => {
 
   const profiles=profileDetails.map((item,index)=>(<Profile profile={item.profile} name={item.name} key={index} />))
 
-  const topics = topicDetails.map((item) => (
-    <TopicItem key={item.topic} topic={item.topic} count={item.count} />
+  const topic_list = topics.map((item) => (
+    <TopicItem key={item.name} topic={item.name} count={item.room_count} />
   ));
 
   return (
@@ -70,7 +74,7 @@ const LeftBar = () => {
         <h3 className=" text-[12px] font-semibold mt-[30px] mb-[28px] text-[#6a6a6a] tracking-[6px]">
           Browse topics
         </h3>
-        <ul className=" flex flex-col min-w-[190px] gap-[14px]">{topics}</ul>
+        <ul className=" flex flex-col min-w-[190px] gap-[14px]">{topic_list}</ul>
         <div className="text-[1.1rem] text-blueRoom font-medium flex gap-4 opacity-80 pl-5 my-6 items-center cursor-pointer " > All <span>{ <img className=" w-[18px]" src={moreIcon} alt="" /> }</span>  </div>
       </div>  
       <div className="discover-people">
@@ -89,3 +93,4 @@ const LeftBar = () => {
 };
 
 export default LeftBar;
+

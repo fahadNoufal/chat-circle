@@ -3,67 +3,41 @@ import profile1 from '../../WebApp-images/profiles/profile5.png'
 import profile2 from '../../WebApp-images/profiles/profile7.png'
 import profile3 from '../../WebApp-images/profiles/profile2.png'
 import Post from './Post'
+import { useLoaderData } from 'react-router-dom'
 
 const Feed = () => {
+    
+    const {rooms}=useLoaderData()
 
-  const postDetails=[
+    const postDetails=[
     {
         profile:profile1,
-        username:'Peter Aurthor',
-        timeSince:'23 minutes',
-        roomName:'Python for everybody',
-        roomDescription:'Hey developers, lets join together and exchange our knowledge and doubts on topics and lets get to know each other',
-        membersNo:14,
-        topic:'python'
+
     },
     {
         profile:profile2,
-        username:'John Matich',
-        timeSince:'44 minutes',
-        roomName:'JavaScript and frontend development',
-        roomDescription:'Hey developers, lets join together and exchange our knowledge and doubts on topics and lets get to know each other.Hey developers, lets join together and exchange our knowledge and doubts on topics and lets get to know each other',
-        membersNo:27,
-        topic:'JavaScipt'
     },
     {
         profile:profile3,
-        username:'Arion Roben',
-        timeSince:'1 hr 5 minutes',
-        roomName:'Time travel to the past',
-        roomDescription:'Lets join together and exchange our knowledge and doubts on topics and lets get to know each other',
-        membersNo:9,
-        topic:'time'
-    },
-    {
-        profile:profile1,
-        username:'Peter Aurthor',
-        timeSince:'23 minutes',
-        roomName:'Python for Begginers',
-        roomDescription:'Hey developers, lets join together and exchange our knowledge and doubts on topics and lets get to know each other',
-        membersNo:14,
-        topic:'python'
-    },
-    {
-        profile:profile2,
-        username:'John Matich',
-        timeSince:'44 minutes',
-        roomName:'Chat gpt and its features',
-        roomDescription:'Hey developers, lets join together and exchange our knowledge and doubts on topics and lets get to know each other.Hey developers, lets join together and exchange our knowledge and doubts on topics and lets get to know each other',
-        membersNo:27,
-        topic:'JavaScipt'
-    },
-    {
-        profile:profile3,
-        username:'Arion Roben',
-        timeSince:'1 hr 5 minutes',
-        roomName:'Time travel ',
-        roomDescription:'Lets join together and exchange our knowledge and doubts on topics and lets get to know each other',
-        membersNo:9,
-        topic:'time'
-    },
+        // username:'Arion Roben',
+        // timeSince:'1 hr 5 minutes',
+        // roomName:'Time travel to the past',
+        // roomDescription:'Lets join together and exchange our knowledge and doubts on topics and lets get to know each other',
+        // membersNo:9,
+        // topic:'time'
+    }
   ]
-
-  let posts=postDetails.map((item)=>(<Post key={item.roomName} {...item}/>))
+  let posts=rooms.map((item)=>(<Post 
+        // profile={postDetails[(Number(item.id)-1)]}
+        key={item.id} 
+        id={item.id}
+        username={item.host.username}
+        timeSince={item.timesince_field}
+        roomName={item.name}
+        roomDescription={item.description}
+        membersNo={item.participants.length}
+        topic={item.topic.name}
+    />))
   return (
     <div className=' flex flex-col gap-[10px]'>
         {posts}
@@ -72,3 +46,9 @@ const Feed = () => {
 }
 
 export default Feed
+
+export const roomsLoader= async()=>{
+    const res=await fetch('http://localhost:8000/api/rooms/')
+    return res.json()
+
+}

@@ -3,6 +3,7 @@ import explore from '../../website-images/explore-text.svg'
 import desktop from '../../website-images/desktop-illustration.png'
 import float1 from '../../website-images/explore-right-circle.svg'
 import float2 from '../../website-images/explore-left-circle.svg'
+// import people from '../../website-images/people-pixal-art.png'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -60,7 +61,8 @@ const Explore = () => {
         </div>
         <img src={float1} className=' explore-f1 translate-x-40 absolute -bottom-10 h-[600px] rotate-0  z-0 right-0' alt="" />
         <img src={float2} className=' explore-f2 absolute bottom-0 h translate-y-[300px] translate-x-[-700px] z-0 left-0' alt="" />
-
+        {/* <img src={people} className=' text-center flex left-0 right-0 items-center justify-center absolute -bottom-20 -z-[0] mx-auto ' alt=""  /> */}
+        
     </div>
   )
 }

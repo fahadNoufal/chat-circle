@@ -19,6 +19,7 @@ import counter1 from "./../../website-images/started-counter-1.svg";
 import counter2 from "./../../website-images/started-counter-2.svg";
 import counter3 from "./../../website-images/started-counter-3.svg";
 
+// import people from '../../website-images/people-pixal-art.png'
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -162,10 +163,12 @@ const GettingStarted = () => {
   },[])
   return (
     <div className="  pt-32 " id="getting-started">
-      <div className=''>
+      <div className='relative'>
         
+        {/* <img src={people} className=' text-center flex left-0 right-0 items-center justify-center absolute -top-44 opacity-20 mx-auto ' alt=""  /> */}
       </div>
-      <div className="chatcircle-cards-header text-[4.2rem] mt-[100px] mb-[2rem] translate-y-[50px] opacity-0 font-semibold text-center flex justify-center w-full">
+
+      <div className="chatcircle-cards-header text-[4.2rem] mt-[150px] mb-[2rem] translate-y-[50px] opacity-0 font-semibold text-center flex justify-center w-full">
         <h2 className="chatcircle-cards-h2 w-[50%]">
           <span className="text-reveal-cards"><span className="gradient-text">Experience</span></span> a seamless entry
           into your <span className="text-reveal-cards"><span className="gradient-text cards-text-reveal">circle</span></span>
