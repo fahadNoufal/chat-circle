@@ -44,7 +44,7 @@ const HomeScreen = () => {
             
         </div>
         <div className="flex relative flex-[2]">
-            <div className=' home-img-container -ml-[28%] overflow-hidden rounded-3xl flex justify-center items-center '>
+            <div className=' home-img-container -ml-[28%] verflow-hidden rounded-3xl flex justify-center items-center '>
                 <img src={homeImg1} className=' mt-20 w-[95%]' alt="" />
             </div>
             <div className="home-text flex-grow  -ml-[3%] flex flex-col justify-center w-[1%]  " >
@@ -52,11 +52,11 @@ const HomeScreen = () => {
                     <span className=' absolute flex items-center w-full h-full' >
                         <span className=' text-[5.7rem] text-[#e6e6e6] tracking-[3px] z-[10] font-black'>THE CIRCLE</span>
                     </span>
-                    <h2 className=' anton-font text-[300px] tracking-wider opacity-30 z-[-10] '>03</h2>
+                    <h2 className=' anton-font text-[18rem] tracking-wider opacity-30 z-[-10] '>CC</h2>
                 </div>
                 <div className='flex pl-2  tracking-[3px] -mt-[80px] gap-[10px] text-[1.2rem] font-bold items-center' >
                     <span className='opacity-40 '>
-                        STEP ENTRY
+                        Join Now
                     </span>
                     <img src={rightDoubleArrow} className='mt-1' alt="" />
                 </div>

@@ -5,7 +5,7 @@ import RightBar from '../common-components/RightBar/RightBar'
 
 const Profile = () => {
   return (
-    <div className=' flex justify-between gap-10 web-app'>
+    <div className=' flex justify-between xl:gap-10 web-app '>
         <LeftBar/>
         <ProfileFeed/>
         <RightBar/>

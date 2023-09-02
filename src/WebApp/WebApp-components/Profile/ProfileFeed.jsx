@@ -1,17 +1,20 @@
 import React from "react";
 import ProfilePic from "../common-components/ProfilePic";
-import profile from "../../WebApp-images/profiles/profile8.png";
 import Feed from "../common-components/Feed";
 import { useLoaderData } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const ProfileFeed = () => {
 
-  const {messages,rooms,host}=useLoaderData()
+  const profilePics=useSelector(store=>store.profile.profiles)
+
+  const {rooms,host}=useLoaderData()
+  console.log(rooms);
 
   return (
-    <div className=" flex flex-col max-w-[850px]">
+    <div className=" flex flex-col max-w-[850px] px-10  xl:px-0">
       <div className="user-profile flex flex-col items-center pt-[40px]">
-        <ProfilePic profile={profile} width="150" />
+        <ProfilePic profile={profilePics[host.avatar]} width="150" />
         <span className=" text-[1.88rem] mt-2 tracking-[3px] font-semibold">
           {host.username}
         </span>
@@ -31,7 +34,7 @@ const ProfileFeed = () => {
       </div>
       <span className=" font-medium tracking-widest mb-[27px]">{rooms.length} rooms available</span>
 
-      <Feed />
+      <Feed rooms={rooms} />
     </div>
   );
 };

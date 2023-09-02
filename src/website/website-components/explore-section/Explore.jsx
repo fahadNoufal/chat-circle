@@ -47,12 +47,12 @@ const Explore = () => {
   return (
     <div className=' explore relative overflow-hidden w-full mt-52   ' id= 'explore'>
         <div className=' flex justify-center absolute top-8 z-[2] right-20 left-20 '>
-            <img src={explore} className=' opacity-0 explore-text text-center' alt="" />
+            <img src={explore} className=' opacity-0 explore-text scale-90 text-center' alt="" />
         </div>
         <div className="flex justify-center pt-24">
-            <img src={desktop} className='z-[5] relative w-[60%]' alt="" />
+            <img src={desktop} className='z-[5] relative w-[55%]' alt="" />
         </div>
-        <div className=" explore-reveal  text-[4.2rem] text-center pt-4 translate-y-[50px] opacity-0 font-semibold">
+        <div className=" explore-reveal  text-[3.9rem] text-center pt-4 translate-y-[50px] opacity-0 font-semibold">
             <div className="text-reveal-cards  transition-transform " >
                 <span className="gradient-text">Connect </span>
                 with new  

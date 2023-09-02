@@ -168,7 +168,7 @@ const GettingStarted = () => {
         {/* <img src={people} className=' text-center flex left-0 right-0 items-center justify-center absolute -top-44 opacity-20 mx-auto ' alt=""  /> */}
       </div>
 
-      <div className="chatcircle-cards-header text-[4.2rem] mt-[150px] mb-[2rem] translate-y-[50px] opacity-0 font-semibold text-center flex justify-center w-full">
+      <div className="chatcircle-cards-header text-[3.9rem] mt-[150px] mb-[2rem] translate-y-[50px] opacity-0 font-semibold text-center flex justify-center w-full">
         <h2 className="chatcircle-cards-h2 w-[50%]">
           <span className="text-reveal-cards"><span className="gradient-text">Experience</span></span> a seamless entry
           into your <span className="text-reveal-cards"><span className="gradient-text cards-text-reveal">circle</span></span>
@@ -177,8 +177,13 @@ const GettingStarted = () => {
       <div className="chatcircle-cards flex flex-c w-full flex-nowrap items-center">
         <div className="cc-card-screen cc-card-screen-1">
           <div className="w-[100vw] items-center justify-center flex ">
-            <div className="chatcircle-card container-1 h-[80vh]">
-            <div className="cc-card-items ">
+            <div className="chatcircle-card  container-1 h-[80svh]">
+            <div className="cc-card-items flex  ">
+              
+              <div className="card-image flex-1">
+                <img src={createRoomHead} alt="" />
+              </div>
+              
               <div className="card-details flex-1">
                 <h3>Create Rooms</h3>
                 <p>
@@ -188,9 +193,7 @@ const GettingStarted = () => {
                   spark inspiration.
                 </p>
               </div>
-              <div className="card-image flex-1">
-                <img src={createRoomHead} alt="" />
-              </div>
+              
               <img
                 src={createFloat2}
                 className=" floating-img float-img-1 -top-28"
@@ -222,9 +225,13 @@ const GettingStarted = () => {
         </div>
         <div className="cc-card-screen">
         <div className="w-[100vw] items-center justify-center flex">
-        <div className="chatcircle-card container-2 h-[80vh]">
-            <div className="cc-card-items">
-              <div className="card-details flex-1">
+        <div className="chatcircle-card  container-2 h-[80svh]">
+            <div className="cc-card-items ">
+              <div className="card-image flex-1">
+                <img src={meetFriendsHead} alt="" />
+              </div>
+              
+              <div className="card-details flex-1  ">
                 <h3>Meet Exciting People!</h3>
                 <p>
                   Expand your horizons and embrace new connections in our Rooms
@@ -232,9 +239,7 @@ const GettingStarted = () => {
                   and ideas are shared
                 </p>
               </div>
-              <div className="card-image flex-1">
-                <img src={meetFriendsHead} alt="" />
-              </div>
+              
               <img
                 src={meetFloat1}
                 className=" floating-img float-img-5 -left-28 -top-10"
@@ -261,8 +266,12 @@ const GettingStarted = () => {
         </div>
         <div className="cc-card-screen cc-card-screen-3">
           <div className="w-[100vw] items-center justify-center flex">
-          <div className="chatcircle-card container-3 h-[80vh]">
+          <div className="chatcircle-card container-3 h-[80svh]">
             <div className="cc-card-items">
+              
+              <div className="card-image flex-1">
+                <img src={shareHead} alt="" />
+              </div>
               <div className="card-details flex-1">
                 <h3>Share Your Knowledge</h3>
                 <p>
@@ -271,9 +280,7 @@ const GettingStarted = () => {
                   and ideas are shared
                 </p>
               </div>
-              <div className="card-image flex-1">
-                <img src={shareHead} alt="" />
-              </div>
+              
               <img
                 src={shareFloat1}
                 className=" floating-img float-img-8 -left-[15rem] -top-[19rem]"

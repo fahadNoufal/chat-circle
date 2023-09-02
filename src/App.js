@@ -11,6 +11,9 @@ import Profile from './WebApp/WebApp-components/Profile/Profile';
 import Login from './WebApp/WebApp-components/login/Login';
 import { roomsLoader } from './WebApp/WebApp-components/common-components/Feed';
 import { userLoader } from './WebApp/WebApp-components/Profile/ProfileFeed';
+import { store } from './store'
+import { Provider } from 'react-redux'
+import Notification from './WebApp/WebApp-components/common-components/Notification';
 function App() {
 
   
@@ -22,6 +25,9 @@ function App() {
         <Route path='app' element={<Navbar/>}>
           <Route index element={<Home/>} loader={roomsLoader}/>
           <Route path='create-room' element={<CreateRoom/>}/>
+          <Route path='update-room'>
+            <Route path=':id' element={<CreateRoom edit={true}/>}/> 
+          </Route>
           <Route path='room' >
             <Route path=':id' element={<Room/>} loader={roomLoader} />
           </Route>
@@ -35,9 +41,12 @@ function App() {
   )
   
   return (
-    <div className="App">      
-       <RouterProvider router={router}/>
-    </div>
+    <Provider store={store}>  
+      <div className="App ">      
+        <RouterProvider router={router}/>
+        <Notification/>
+      </div>
+    </Provider>
   );
 }
 

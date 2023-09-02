@@ -3,7 +3,7 @@ import React from 'react'
 const Contact = () => {
   return (
     <div className="contact-section relative pb-[210px]">
-        <div id='contact' className='contact w-[760px] mx-auto relative z-10  bg-black rounded-[40px] p-[3.12rem] border border-[#4A4545]'>
+        <div id='contact' className='contact max-w-[760px] mx-auto relative z-10  bg-black rounded-[40px] p-[3.12rem] border border-[#4A4545]'>
             <h3 className='text-[2.8rem] text-center tracking-tight font-semibold mb-[3rem]'>Get in touch 👋</h3>
             <form action="" method="post" className=' flex flex-col justify-center'>
                 <div className="email-name flex justify-between">

@@ -5,10 +5,13 @@ import profile7 from '../../../WebApp-images/profiles/profile7.png'
 import {Link, useLoaderData} from 'react-router-dom'
 
 import ProfilePic from '../ProfilePic'
+import { useSelector } from 'react-redux'
 
 const RightBar = () => {
 
   const {messages}=useLoaderData()
+  const profilePics=useSelector(store=>store.profile.profiles)
+
 
   let activityDetails=[
     {profile:profile5,name:'Don benny',timeSince:'3 minutes',roomName:'Python for everybody',message:'Hello everyone!!.. '},
@@ -18,8 +21,8 @@ const RightBar = () => {
 
   const Activity=({profile,name,timeSince,roomName,message,user_id,roomId})=>{
     return(
-        <div className="activity-item w-[280px] p-[19px] rounded-[14px] flex flex-col gap-[12px] bg-gradient-to-br from-[rgba(0,0,0,0.57)] to-[rgba(69,68,68,0.22)] ">
-            <Link className="act-profile flex gap-2 items-center" to={`user/${user_id}`}>
+        <div className="activity-item max-w-[280px] p-[19px]  rounded-[14px] flex flex-col gap-[12px] bg-gradient-to-br from-[rgba(0,0,0,0.57)] to-[rgba(69,68,68,0.22)] ">
+            <Link className="act-profile flex gap-2 items-center" to={`/app/user/${user_id}`}>
                 <ProfilePic profile={profile} width="50"/>
                 <div className=" flex flex-col -gap-1">
                     <h3 className=' text-lg font-medium tracking-widest'>
@@ -47,6 +50,7 @@ const RightBar = () => {
         key={item.id}
         user_id={item.user_id.id}
         name={item.user_id.username}
+        profile={profilePics[item.user_id.avatar]}
         timeSince={item.timesince_field}
         roomName={item.room.name}
         roomId={item.room.id}
@@ -55,12 +59,12 @@ const RightBar = () => {
   ))
 
   return (
-    <div className=' right-bar w-full min-h-[100vh] pt-[2.9rem] gap-[4.4rem] bg-[#1E1E1E] flex flex-col items-center max-w-[370px]'>
-        <div className="activities-container w-[80%] flex flex-col">
-            <h1 className=" opacity-75 text-[1.9rem] mb-[30px] ml-2 font-medium tracking-[3px]">
+    <div className=' right-bar w-full min-h-[100vh] hidden pt-[2.9rem] gap-[4.4rem] bg-[#1E1E1E] xl:flex flex-col  items-center max-w-[370px]'>
+        <div className="activities-container px-10 flex flex-col items-center ">
+            <h1 className=" opacity-75 self-start text-[1.9rem] mb-[30px] ml-2 font-medium tracking-[3px]">
                 Activities
             </h1>
-            <div className="activities-list flex flex-col gap-1">
+            <div className="activities-list flex flex-col gap-1 items-center ">
                 {activities_list}
             </div>
         </div>
