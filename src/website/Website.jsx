@@ -7,6 +7,7 @@ import JoinBanner from './website-components/joinBanner/JoinBanner'
 import Contact from './website-components/contact-form/Contact'
 import Explore from './website-components/explore-section/Explore'
 import HomeScreen from './website-components/homeScreen/HomeScreen'
+import RunningText from './website-components/running-text/RunningText'
 
 const Website = () => {
   return (
@@ -15,6 +16,7 @@ const Website = () => {
       <HomeScreen/>
       <Features/>
       <Explore/>
+      <RunningText/>
       <GettingStarted/>
       <JoinBanner/>
       <Contact/>

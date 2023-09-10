@@ -38,11 +38,11 @@ const Login = () => {
   const profiles=useSelector(store=>(store.profile.profiles))
 
 
-  const ProfilePic = ({width='92',index}) => {
+  const ProfilePic = ({index}) => {
       return (
           <div onClick={()=>{setFormData(prev=>({...prev,avatar:index}))}} className="activity-item-profile-container cursor-pointer hover:scale-110 overflow-hidden  transition-all flex">
-              <div style={{width:`${width}px`,borderRadius:'14px'}} className={`profile-pic rounded-full overflow-hidden aspect-square`} >
-              <img src={profiles[index]} style={{width:`${width}px`}}  className="" alt="" />
+              <div style={{borderRadius:'14px'}} className={`profile-pic md:w-[92px] w-[70px] rounded-full overflow-hidden aspect-square`} >
+              <img src={profiles[index]}  className="md:w-[92px] w-[70px]" alt="" />
               </div>
           </div>
       )
@@ -172,9 +172,9 @@ const Login = () => {
   return(
     <div className="">
       {settingProfile?(
-      <div className=' create-room -mt-[70px] h-[100svh] w-full relative flex flex-col overflow-hidden justify-center items-center web-app'>
+      <div className=' -mt-[70px] h-[100svh] w-full relative flex flex-col overflow-hidden justify-center items-center web-app'>
           <img src={wave} className=' absolute -z-10 top-20  left-0 right-0' alt="" />
-          <div className="bg-black px-[66px] relative pt-[40px] mt-16 flex flex-col justify-center items-center max-w-[530px] rounded-[20px]  ">
+          <div className="bg-black px-6 md:px-[66px] relative pt-[40px] mt-16 flex flex-col justify-center items-center max-w-[530px] rounded-[20px]  ">
               <span onClick={()=>{setSettingProfile(false)}} className='-mb-1 px-4 py-2 scale-125 rounded-lg bg-black top-2 absolute left-[-90px] hover:scale-150 transition-all '>
                 <img src={backIcon} className='h-6  '  alt="" />
               </span>
@@ -184,7 +184,7 @@ const Login = () => {
               </div>
               
               
-              <div className={"prof-img-container  justify-center mx-auto pt-14 pb-[65px] flex-wrap flex gap-[50px]  "+ (formData.avatar?'blur-sm':'')}>
+              <div className={"prof-img-container  justify-center mx-auto pt-14 pb-[65px] flex-wrap flex gap-[26px] md:gap-[50px]  "+ (formData.avatar?'blur-sm':'')}>
                   {allProfiles}
               </div>
           </div>
@@ -204,16 +204,16 @@ const Login = () => {
           )}
       </div>
     ):(
-      <div className=' create-room -mt-[70px] px-20 h-[100svh] w-full relative flex flex-col overflow-hidden justify-center items-center web-app'>
+      <div className='-mt-[70px] px-8 md:px-20 h-[100svh] w-full relative flex flex-col overflow-hidden justify-center items-center web-app'>
         <div className=" login-form-container max-w-[630px] rounded-[25px] mt-36  w-full  ">
-          <div className=" bg-gradient-to-r rounded-t-[25px] to-[rgb(0,0,0)] py-4 px-10 text-[1.5rem] text-[#818181] flex justify-between items-center tracking-[2px] font-semibold from-[rgba(27,27,27,0.87)] ">
+          <div className=" bg-gradient-to-r rounded-t-[25px] to-[rgb(0,0,0)] py-4 px-10 text-[1.2rem] md:text-[1.5rem] text-[#818181] flex justify-between items-center tracking-[2px] font-semibold from-[rgba(27,27,27,0.87)] ">
             <span>
               {register?'Register':"Login"}
             </span>
-            <button className='pl-4 -mb-2 pb-2 z-50'><img src={backIcon} onClick={()=>{navigate(-1)}} className='w-4 mr-2' alt="" /></button>
+            <button className='pl-4 -mb-2 pb-2 z-50 scale-75 md:scale-100 '><img src={backIcon} onClick={()=>{navigate(-1)}} className='w-4 mr-2' alt="" /></button>
           </div>
           <div className=" h-full py-8 px-10   ">
-            <form id='create-room-form' onSubmit={(e)=>{register?handleRegisterFormSubmit(e):handleLogin(e)}}   className='flex flex-col gap-[24px] overflow-y-scroll form-scrollbar  '>
+            <form id='create-room-form' onSubmit={(e)=>{register?handleRegisterFormSubmit(e):handleLogin(e)}}   className='flex md:text-[1.2rem]  flex-col gap-[12px] md:gap-[24px] overflow-y-scroll form-scrollbar  '>
               <div>
                 <label htmlFor="username">
                   Username
@@ -242,7 +242,7 @@ const Login = () => {
                   <input type="password" spellCheck='false' autoComplete='off' value={formData['confirm-password']} onChange={handleInput} className=' w-full rounded mt-2 ' name='confirm-password' id='confirm-password' placeholder='Enter password...' />
                 </div>
               )}
-              <button type="submit" className='bg-[#090711] tracking-[3px] font-semibold text-xl py-2 text-[#b7b4b4] outline-none px-6 rounded-md'>
+              <button type="submit" className='bg-[#090711] tracking-[3px] font-semibold md:text-xl py-2 text-[#b7b4b4] outline-none px-6 rounded-md'>
                 {register?'Register':"Login"}
               </button>
             </form>

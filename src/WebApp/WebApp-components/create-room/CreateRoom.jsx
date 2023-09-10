@@ -110,14 +110,14 @@ const CreateRoom = ({edit=false}) => {
   }
 
   return (
-    <div className=' create-room -mt-[70px] h-[100svh] w-full flex justify-center items-center web-app'>
-        <div className=" create-room-container max-w-[830px] relative rounded-[25px] mt-20  w-full  ">
-            <div className=" bg-gradient-to-r rounded-t-[25px] to-[rgb(0,0,0)] py-4 px-10 text-[1.7rem] text-[#818181] flex justify-between items-center tracking-[2px] font-semibold from-[rgba(27,27,27,0.87)] ">
+    <div className=' create-room -mt-[70px] h-[100svh] w-full flex overflow-hidden justify-center items-center web-app'>
+        <div className=" create-room-container max-w-[830px] mx-10 md:mx-0   relative rounded-[25px] mt-20  w-full  ">
+            <div className=" bg-gradient-to-r rounded-t-[25px] to-[rgb(0,0,0)] py-4 px-10 text-[1.2rem] md:text-[1.6rem] text-[#818181] flex justify-between items-center tracking-[2px] font-semibold from-[rgba(27,27,27,0.87)] ">
               <span>{edit?'Update Room':'Create Room'}</span>
-              <button className='pl-4 -mb-2 pb-2 z-40' onClick={()=>{navigate(-1)}} ><img src={backIcon} className='w-4 mr-2' alt="" /></button>
+              <button className='pl-4 -mb-2 pb-2 z-40 scale-75 md:scale-100 ' onClick={()=>{navigate(-1)}} ><img src={backIcon} className='w-4 mr-2' alt="" /></button>
             </div>
-            <div className=" h-full py-8 px-10   ">
-              <form id='create-room-form' onSubmit={(e)=>{edit?handleEdit(e):handleSubmit(e)}} className='flex flex-col gap-[33px]'>
+            <div className=" h-full py-8 md:px-10 px-5   ">
+              <form id='create-room-form' onSubmit={(e)=>{edit?handleEdit(e):handleSubmit(e)}} className='flex flex-col gap-[15px] md:gap-[33px]'>
                 <div>
                   <label htmlFor="room-name">
                     Name
@@ -137,13 +137,13 @@ const CreateRoom = ({edit=false}) => {
                   </label>
                   <textarea type="text" autoComplete='off' spellCheck='false' className=' w-full rounded mt-2 ' name='description' onChange={handleInput} value={form_data.description} id='room-description' placeholder='Enter Description...' />
                 </div>
-                <button type="submit" className='bg-[#100d20] tracking-[3px] font-semibold text-xl py-2 text-[#b7b4b4] px-6 rounded-md'>Submit</button>
+                <button type="submit" className='bg-[#100d20] tracking-[3px] font-semibold md:text-xl py-2 text-[#b7b4b4] px-6 rounded-md'>Submit</button>
               </form>
             </div>
-            <img src={float1} alt="" className="absolute top-8 -right-[100px]" />
-            <img src={float2} alt="" className='absolute -top-[120px] left-[170px] scale-80 ' />
-            <img src={float3} alt="" className='absolute top-16 -left-[165px]' />
-            <img src={float4} alt="" className='absolute  -bottom-[110px] shadow-2xl  right-60 ' />
+            <img src={float1} alt="" className="absolute scale-75 md:scale-100 top-[50%] md:top-8 -right-[100px]" />
+            <img src={float2} alt="" className='absolute scale-75 md:scale-100 -top-[120px] left-[20%] scale-80 ' />
+            <img src={float3} alt="" className='absolute scale-75 md:scale-100 top-[4%] md:top-16 -left-[165px]' />
+            <img src={float4} alt="" className='absolute scale-75 md:scale-100  -bottom-[110px] shadow-2xl right-[30%]' />
         </div>
     </div>
   )

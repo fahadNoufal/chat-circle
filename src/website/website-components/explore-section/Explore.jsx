@@ -45,14 +45,14 @@ const Explore = () => {
 
   
   return (
-    <div className=' explore relative overflow-hidden w-full mt-52   ' id= 'explore'>
-        <div className=' flex justify-center absolute top-8 z-[2] right-20 left-20 '>
-            <img src={explore} className=' opacity-0 explore-text scale-90 text-center' alt="" />
+    <div className=' explore relative overflow-hidden w-full mt-20 lg:mt-52   ' id= 'explore'>
+        <div className=' flex justify-center absolute lg:top-8 top-20 z-[2] right-20 left-20 '>
+            <img src={explore} className=' opacity-0 explore-text lg:scale-90 sm:scale-150 scale-[2]  text-center' alt="" />
         </div>
         <div className="flex justify-center pt-24">
-            <img src={desktop} className='z-[5] relative w-[55%]' alt="" />
+            <img src={desktop} className='z-[5] relative lg:w-[55%]' alt="" />
         </div>
-        <div className=" explore-reveal  text-[3.9rem] text-center pt-4 translate-y-[50px] opacity-0 font-semibold">
+        <div className=" explore-reveal  lg:text-[3.9rem] text-[2.3rem] text-center pt-4 translate-y-[50px] opacity-0 font-semibold">
             <div className="text-reveal-cards  transition-transform " >
                 <span className="gradient-text">Connect </span>
                 with new  

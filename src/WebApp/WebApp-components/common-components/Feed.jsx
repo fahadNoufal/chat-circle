@@ -36,7 +36,7 @@ const Feed = () => {
     profile={profilePics[item.host.avatar]}
 />)):''
   return (
-    <div className=' flex flex-col gap-[10px] w-full items-center '>
+    <div className=' flex flex-col gap-[10px] w-full items-center pb-8'>
         {posts}
     </div>
   )

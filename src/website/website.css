@@ -64,25 +64,20 @@ h3.connect-card{
 .cc-card-items{
     backdrop-filter: blur(32px);
     width: 100%;
-    padding: 5rem;
     height: 100%;
     border-radius: 20px;
     background: linear-gradient(to bottom right,rgba(255,255,255,0.1),rgba(255,255,255,0.02));
     box-shadow: 11px 12px 22px rgba(0,0,0,0.25);
     display: flex;
-    gap: 3rem;
     position: relative;
 }
 .cc-card-items h3{
-    font-size: 3rem;
     font-weight: 500;
-    margin-bottom: 2rem;
 }
 .cc-card-items p{
-    font-size: 1.13rem;
     line-height: 1.9rem;
-    width: 82%;
-
+    letter-spacing: 1px;
+    /* width: 82%; */
 }
 .cc-card-items .card-details, .cc-card-items .card-image{
     align-self: center;
@@ -107,7 +102,6 @@ h3.connect-card{
     overflow-y: hidden;
 }
 .join-span-container{
-    line-height: 280px;
     overflow: hidden;
     margin-top: -2px;
   
@@ -134,7 +128,7 @@ h3.connect-card{
     overflow: hidden;   
 }
 .chatcircle-card{
-    /* max-width: 824px; */
+    /* max-width: 704px; */
 }
 .anton-font{
     font-family: 'Anton', sans-serif;
@@ -148,3 +142,50 @@ h3.connect-card{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.running-banner{
+    padding: 0.5rem 2rem;
+    margin: 0;
+    position: absolute;
+    padding-top: 1rem;
+    overflow: hidden;
+    font-family: 'Bayon', sans-serif;
+    color: #000;
+    letter-spacing: 0.5%;
+    line-height: 73%;
+    background: linear-gradient(180deg, #C537D2 0%, #4F75FF 100%);
+    box-shadow: 0px 5.283px 52.82998px 0px rgba(0, 0, 0, 0.85);
+}
+
+/* @media (min-width: 800px) {
+    .chatcircle-card{
+        max-width: 800px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .chatcircle-card {
+        max-width: 1024px;
+    }
+}
+@media (min-width: 400px) {
+    .chatcircle-card {
+        max-width: 400px;
+    }
+} */
+
+
+
+@media (max-width: 768px) {
+    .floating-img{
+        scale: 0.7;
+    }
+    .cc-card-items p{
+        line-height: 1.5rem;
+        /* width: 82%; */
+    }
+    .feature-card{
+        height: 800px;
+        padding: 2.4rem 2rem;
+    }
+  }

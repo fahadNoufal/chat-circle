@@ -99,6 +99,7 @@ const GettingStarted = () => {
         onEnter:()=>{cont3Tl.play()},
         onLeaveBack:()=>{cont3Tl.pause()}
       })
+
       ScrollTrigger.create({
         trigger:'.join-banner',
         start:'top top',
@@ -162,35 +163,43 @@ const GettingStarted = () => {
 
   },[])
   return (
-    <div className="  pt-32 " id="getting-started">
+    <div className="   pt-0 " id="getting-started">
       <div className='relative'>
         
         {/* <img src={people} className=' text-center flex left-0 right-0 items-center justify-center absolute -top-44 opacity-20 mx-auto ' alt=""  /> */}
       </div>
 
-      <div className="chatcircle-cards-header text-[3.9rem] mt-[150px] mb-[2rem] translate-y-[50px] opacity-0 font-semibold text-center flex justify-center w-full">
-        <h2 className="chatcircle-cards-h2 w-[50%]">
-          <span className="text-reveal-cards"><span className="gradient-text">Experience</span></span> a seamless entry
-          into your <span className="text-reveal-cards"><span className="gradient-text cards-text-reveal">circle</span></span>
-        </h2>
+      <div className="chatcircle-cards-header lg:text-[3.9rem] text-[2.3rem] mt-[150px]  translate-y-[50px] opacity-0 font-semibold text-center flex-col items-center flex justify-center w-full">
+        {/* <span className=""> */}
+          <h2 className="chatcircle-cards-h2 lg:w-[50%] w-[90%]  lg:px-0 px-4">
+            <span className="text-reveal-cards"><span className="gradient-text">Experience</span></span> a seamless entry
+            into your <span className="text-reveal-cards"><span className="gradient-text cards-text-reveal">circle </span></span>
+          </h2>
+        {/* </span> */}
+        <span className=" text-lg mt-4 tracking-wider">in just 3 steps</span>
       </div>
-      <div className="chatcircle-cards flex flex-c w-full flex-nowrap items-center">
-        <div className="cc-card-screen cc-card-screen-1">
-          <div className="w-[100vw] items-center justify-center flex ">
-            <div className="chatcircle-card  container-1 h-[80svh]">
-            <div className="cc-card-items flex  ">
-              
-              <div className="card-image flex-1">
-                <img src={createRoomHead} alt="" />
+      <div className="chatcircle-cards flex w-full flex-nowrap items-center">
+        <div className="cc-card-screen cc-card-screen-1 ">
+          <div className="w-[100vw] items-center  overflow-x-clip justify-center flex  ">
+            <div className="chatcircle-card  container-1 h-[80svh] xl:max-w-[1024px] lg:max-w-[800px] md:max-w-[400px] max-w-[340px]">
+            <div className="cc-card-items p-4 lg:gap-12 xl:p-20 flex flex-col lg:flex-row  ">
+
+              <div className="card-image flex-1 -ml-4 ">
+                <img src={createRoomHead} alt="" className="" />
               </div>
               
-              <div className="card-details flex-1">
-                <h3>Create Rooms</h3>
-                <p>
-                  Unlock the power of focused conversations in topic-specific
+              <div className="card-details flex-1 p-4 text-center lg:mt-0 -mt-5 lg:text-start">
+                <h3 className=" text-[2rem] lg:mb-8 lg:text-[3rem]"> 
+                  Create Rooms
+                </h3>
+                <p className="w-full mt-4 lg:mt-0 lg:text-[1.13rem]">
+                  {/* Unlock the power of focused conversations in topic-specific
                   rooms, where passionate individuals gather to share ideas,
                   exchange perspectives, and create meaningful connections that
-                  spark inspiration.
+                  spark inspiration. */}
+                  You can create or participate in conversations which are of your intrest through our Rooms. 
+                  It is where passionate individuals gather to share ideas and
+                  exchange perspectives.
                 </p>
               </div>
               
@@ -214,7 +223,7 @@ const GettingStarted = () => {
                 className=" floating-img float-img-4 -bottom-[6rem] right-28"
                 alt=""
               />
-              <svg width="1066" height="688" className="absolute top-[-18px] left-[-10px]" viewBox="0 0 1066 688" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="absolute  rotate-90 lg:rotate-0 lg:top-[-18px]   left-[-120px] top-[120px] lg:left-[-10px] xl:max-w-[1024px] lg:max-w-[800px] lg:w-auto w-[600px]" viewBox="0 0 1066 688" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id='float-path-1' fillRule="evenodd" clipRule="evenodd" d="M560 14.0001C686 -17.5 928.121 5.74625 1014.5 94.0003C1135.41 201.549 1006.5 597 973.131 636.058C920.183 719.77 654.593 623.945 530.365 663.086C412.458 700.234 256.451 693.867 149.72 645.63C96.5632 623.106 50.2291 595.362 19.4747 486.496C-11.0131 378.575 -15.0237 167.859 96.5632 98.8747C197.666 36.3721 426.029 47.4929 560 14.0001Z" />
               </svg>
             </div>
@@ -224,16 +233,16 @@ const GettingStarted = () => {
           </div>
         </div>
         <div className="cc-card-screen">
-        <div className="w-[100vw] items-center justify-center flex">
-        <div className="chatcircle-card  container-2 h-[80svh]">
-            <div className="cc-card-items ">
-              <div className="card-image flex-1">
+        <div className="w-[100vw] items-center  overflow-x-clip justify-center flex">
+        <div className="chatcircle-card  container-2 h-[80svh]  xl:max-w-[1024px] lg:max-w-[800px] md:max-w-[400px] max-w-[340px]">
+            <div className="cc-card-items p-4 lg:gap-12 xl:p-20 flex flex-col lg:flex-row">
+              <div className="card-image flex-1 mt-5 lg:mt-0 ">
                 <img src={meetFriendsHead} alt="" />
               </div>
               
-              <div className="card-details flex-1  ">
-                <h3>Meet Exciting People!</h3>
-                <p>
+              <div className="card-details flex-1 p-4 text-center lg:mt-0 -mt-5 lg:text-start ">
+                <h3 className=" text-[2rem] lg:mb-8 lg:text-[3rem]" >Meet Exciting People!</h3>
+                <p className="w-full mt-4 lg:mt-0 lg:text-[1.13rem]" >
                   Expand your horizons and embrace new connections in our Rooms
                   as you step out and meet new people, where bonds are formed
                   and ideas are shared
@@ -255,7 +264,7 @@ const GettingStarted = () => {
                 className=" floating-img float-img-7 -bottom-[7rem] left-[18rem]"
                 alt=""
               />
-              <svg width="1066" height="688" className="absolute top-[-18px] left-[-10px]" viewBox="0 0 1066 688" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="absolute rotate-90 lg:rotate-0 top-[100px]  left-[-140px] lg:left-[-10px] lg:top-[30px] xl:max-w-[1024px] lg:max-w-[800px] lg:w-auto w-[620px]" viewBox="0 0 1066 688" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id='float-path-2' fillRule="evenodd" clipRule="evenodd" d="M560 14.0001C686 -17.5 928.121 5.74625 1014.5 94.0003C1135.41 201.549 1006.5 597 973.131 636.058C920.183 719.77 654.593 623.945 530.365 663.086C412.458 700.234 256.451 693.867 149.72 645.63C96.5632 623.106 50.2291 595.362 19.4747 486.496C-11.0131 378.575 -15.0237 167.859 96.5632 98.8747C197.666 36.3721 426.029 47.4929 560 14.0001Z" />
               </svg>
             </div>
@@ -265,16 +274,16 @@ const GettingStarted = () => {
           
         </div>
         <div className="cc-card-screen cc-card-screen-3">
-          <div className="w-[100vw] items-center justify-center flex">
-          <div className="chatcircle-card container-3 h-[80svh]">
-            <div className="cc-card-items">
+          <div className="w-[100vw] items-center  overflow-x-clip justify-center flex">
+          <div className="chatcircle-card container-3 h-[80svh] xl:max-w-[1024px] lg:max-w-[800px] md:max-w-[400px] max-w-[340px]">
+            <div className="cc-card-items p-4  lg:gap-12 xl:p-20 flex flex-col lg:flex-row">
               
-              <div className="card-image flex-1">
+              <div className="card-image flex-1 mt-5">
                 <img src={shareHead} alt="" />
               </div>
-              <div className="card-details flex-1">
-                <h3>Share Your Knowledge</h3>
-                <p>
+              <div className="card-details flex-1 p-4 text-center lg:mt-0 -mt-5 lg:text-start">
+                <h3 className=" text-[2rem] lg:mb-8 lg:text-[3rem]">Share Your Knowledge</h3>
+                <p className="w-full mt-4 lg:mt-0 lg:text-[1.13rem]">
                   Expand your horizons and embrace new connections in our Rooms
                   as you step out and meet new people, where bonds are formed
                   and ideas are shared
@@ -296,7 +305,7 @@ const GettingStarted = () => {
                 className=" floating-img float-img-10 -bottom-[7rem] left-[15rem] "
                 alt=""
               />
-              <svg width="1066" height="688" className="absolute top-[-18px] left-[-10px]" viewBox="0 0 1066 688" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg height="688" className="absolute rotate-90 lg:rotate-0 top-[-40px] left-[-130px] lg:left-0 xl:max-w-[1024px] lg:max-w-[800px] lg:w-auto w-[600px]" viewBox="0 0 1066 688" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id='float-path-3' fillRule="evenodd" clipRule="evenodd" d="M560 14.0001C686 -17.5 928.121 5.74625 1014.5 94.0003C1135.41 201.549 1006.5 597 973.131 636.058C920.183 719.77 654.593 623.945 530.365 663.086C412.458 700.234 256.451 693.867 149.72 645.63C96.5632 623.106 50.2291 595.362 19.4747 486.496C-11.0131 378.575 -15.0237 167.859 96.5632 98.8747C197.666 36.3721 426.029 47.4929 560 14.0001Z" />
               </svg>
             </div>

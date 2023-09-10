@@ -5,14 +5,21 @@ import { Link } from 'react-router-dom'
 
 const Post = ({profile,username,timeSince,roomName,roomDescription,membersNo,topic,id,hostId}) => {
   return (
-    <div className=' flex gap-4 p-[30px] max-w-[940px] w-full rounded-[21px] bg-[#1e1e1e] pr-[60px]'>
-        <div className="post-prof -ml-2 cursor-pointer">
+    <div className=' flex flex-col sm:flex-row gap-4 p-[30px] max-w-[940px] w-full rounded-[21px] bg-[#1e1e1e] lg:pr-[60px]'>
+        <div className="post-prof -ml-2 flex gap-3 items-center sm:items-start cursor-pointer">
             <Link to={`/app/user/${hostId}/`}>
                 <ProfilePic profile={profile} width='60'/>
             </Link>
+
+            <div className="post-author flex sm:hidden justify-between w-full items-center">
+                <Link to={`/app/user/${hostId}/`}>
+                    <span className=' text-[1.1rem] tracking-[2px] font-semibold  cursor-pointer'> {username}</span>
+                </Link>
+                <span className=' text-[12px] text-[#c0c0c0] cursor-default '>{timeSince} ago</span>
+            </div>
         </div>
         <div className="post-details flex w-full flex-col gap-[10px]">
-            <div className="post-author flex  justify-between items-center mt-[15px]">
+            <div className="post-author  justify-between items-center hidden sm:flex mt-[15px]">
                 <Link to={`/app/user/${hostId}/`}>
                     <span className=' text-[1.1rem] tracking-[2px] font-semibold  cursor-pointer'> {username}</span>
                 </Link>

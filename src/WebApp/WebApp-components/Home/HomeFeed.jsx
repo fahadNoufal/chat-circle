@@ -29,29 +29,28 @@ const HomeFeed = () => {
     return (
       <div className="w-full">
        
-      <div className="flex gap-[27px] mb-5">
-        
-        <div className="flex justify-center py-4 gap-8 flex-1 bg-black px-10 items-center rounded-[20px]  ">
+      <div className="flex md:gap-[27px] gap-[10px] md:flex-row flex-col mb-5">
+        <div className="flex   justify-between py-4 gap-8 flex-1 bg-black px-5 md:px-10 items-center rounded-[20px]  ">
           <div className="font-semibold flex flex-col -mt-1 ">
-            <div className="text-[1.38rem] flex gap-2">
+            <div className="  md:text-[1.38rem] flex gap-2">
               <span className="text-[#ffc953]">{room_count}</span> rooms
               available
             </div>
             <div className=" flex justify-between gap-4  items-center">
-              <span className="text-[0.7rem] tracking-[3px] font-light">
-                Create your own room
+              <span className="text-[0.7rem] tracking-[2px] md:tracking-[3px] font-light">
+                Create your own room  
               </span>
             </div>
           </div>
           <Link to="/app/create-room">
             <button className="bg-[#189cb9] flex py-3  rounded-[10px] text-5xl px-3 ">
-              <div className="flex justify-center min-w-[40px] items-center">
+              <div className="flex justify-center min-w-[20px] md:min-w-[40px] items-center">
                 <img src={add} className="scale-150" alt="" />
               </div>
             </button>
           </Link>
         </div>
-        <div className="flex-1 bg-black rounded-[20px] py-[20px] flex flex-col justify-center items-center ">
+        <div className="flex-1 hidden bg-black rounded-[20px] py-[20px] md:flex flex-col justify-center items-center ">
           <div className="w-[310px] flex flex-col gap-[10px]">
             <div className="current-user-profile flex ml-6 gap-4 items-center">
               <ProfilePic profile={profile} width="50" />
@@ -98,11 +97,11 @@ const HomeFeed = () => {
       </form>
       {!user&&(
           <div className=" flex pb-4 pt-1 w-full px-1 items-center justify-between">
-            <div className="text-[1.5rem] flex gap-2">
+            <div className=" text-[0.9rem] lg:text-[1.5rem] flex gap-2">
               <span className="text-[#ffc953] font-bold">{room_count}</span> rooms
               available
             </div>
-            <button onClick={handleCreateRoom} className=" px-3 py-1 bg-blueRoom rounded-lg font-semibold" >Create Room</button>
+            <button onClick={handleCreateRoom} className=" px-3 py-1 bg-blueRoom text-[0.8rem] md:text-[1rem] rounded-lg font-semibold" >Create Room</button>
           </div>
       )}
       {user&&<LoggedInUserWedget profile={profilePics[user.avatar]} username={user.username} />}

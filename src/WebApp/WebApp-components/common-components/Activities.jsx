@@ -1,17 +1,17 @@
 import React from 'react'
 import {Link, useLoaderData} from 'react-router-dom'
 
-import ProfilePic from '../ProfilePic'
+import ProfilePic from './ProfilePic'
 import { useSelector } from 'react-redux'
 
-const RightBar = () => {
+const Activities = () => {
 
-  const {messages}=useLoaderData()
-  const profilePics=useSelector(store=>store.profile.profiles)
+    const {messages}=useLoaderData()
+    const profilePics=useSelector(store=>store.profile.profiles)  
 
-  const Activity=({profile,name,timeSince,roomName,message,user_id,roomId})=>{
+    const Activity=({profile,name,timeSince,roomName,message,user_id,roomId})=>{
     return(
-        <div className="activity-item max-w-[280px] p-[19px]  rounded-[14px] flex flex-col gap-[12px] bg-gradient-to-br from-[rgba(0,0,0,0.57)] to-[rgba(69,68,68,0.22)] ">
+        <div className="activity-item md:max-w-[280px] w-full max-w-[400px] p-[19px]  rounded-[14px] flex flex-col gap-[12px] bg-gradient-to-br from-[rgba(0,0,0,0.57)] to-[rgba(69,68,68,0.22)] ">
             <Link className="act-profile flex gap-2 items-center" to={`/app/user/${user_id}`}>
                 <ProfilePic profile={profile} width="50"/>
                 <div className=" flex flex-col -gap-1">
@@ -32,10 +32,10 @@ const RightBar = () => {
                 <span className=' text-[0.83rem] tracking-widest'>{message}</span>
             </Link>
         </div>
-    )
-  }
+      )
+    }
 
-  const activities_list=messages.map((item)=>(
+    const activities_list=messages.map((item)=>(
     <Activity
         key={item.id}
         user_id={item.user_id.id}
@@ -46,15 +46,15 @@ const RightBar = () => {
         roomId={item.room.id}
         message={item.body}
     />
-  ))
+    ))
 
   return (
-    <div className=' right-bar w-full min-h-[100vh] hidden pt-[2.9rem] gap-[4.4rem] bg-[#1E1E1E] xl:flex flex-col  items-center max-w-[370px]'>
-        <div className="activities-container px-10 flex flex-col items-center ">
-            <h1 className=" opacity-75 self-start text-[1.9rem] mb-[30px] ml-2 font-medium tracking-[3px]">
+    <div className=' w-full h-[92svh] pt-[2.9rem] gap-[4.4rem]  bg-[#1E1E1E] flex-col  items-center '>
+        <div className="activities-page-container h-full overflow-scroll  px-10 flex flex-col items-center ">
+            <h1 className=" opacity-75 self-start  text-[1.9rem] mb-[30px] ml-2 font-medium tracking-[3px]">
                 Activities
             </h1>
-            <div className="activities-list flex flex-col gap-1 items-center ">
+            <div className="activities-list flex flex-col gap-4 pb-10 items-center ">
                 {activities_list}
             </div>
         </div>
@@ -62,4 +62,10 @@ const RightBar = () => {
   )
 }
 
-export default RightBar
+export default Activities
+
+export const activitiesLoader= async()=>{
+    
+    const res=await fetch(`http://localhost:8000/api/activity/`)
+    return res.json()
+}

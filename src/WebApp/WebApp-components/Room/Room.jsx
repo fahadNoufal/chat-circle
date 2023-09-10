@@ -115,8 +115,8 @@ const Room = () => {
     <div className="flex justify-center h-[99svh] -mt-[75px]  overflow-hidden pt-[40px] web-app">
       <div className="flex  justify-between max-w-[1400px] w-full px-8 gap-24 mb-4 mt-[65px]">
         <div className="room-container flex w-full flex-grow flex-col rounded-[20px] max-w-[866px] h-full relative overflow-hidden">
-          <div className="flex justify-between w-full bg-[#696969] py-[22px] px-[56px]">
-            <div className=" tracking-[5px] text-[1.7rem] font-bold   ">
+          <div className="flex justify-between w-full bg-[#696969] py-3 px-8 md:py-[22px] md:px-[56px]">
+            <div className=" tracking-[5px] text-[1.4rem] md:text-[1.7rem] font-bold   ">
               Room
             </div>
             <div className="flex gap-8">
@@ -127,7 +127,7 @@ const Room = () => {
                   </svg>
                 </button>):''}
               <button
-                className="pl-4 -mb-2 pb-2 z-40"
+                className="pl-4 scale-75 md:scale-100 -mb-2 pb-2 z-40"
                 onClick={() => {
                   navigate(-1);
                 }}
@@ -141,12 +141,12 @@ const Room = () => {
             </div>
           </div>
 
-          <div className=" px-[50px] gap-[10px] pt-[40px] pb-[20px] overflow-hidden flex flex-col h-full flex-grow bg-[#1e1e1e]">
-            <div className="flex mb-1 justify-between ">
-              <h1 className=" text-[1.8rem] font-semibold tracking-[3px] text-blueRoom  ">
+          <div className=" md:px-[50px] px-8 gap-[10px] pt-[40px] pb-[20px] overflow-hidden flex flex-col h-full flex-grow bg-[#1e1e1e]">
+            <div className="flex mb-1 relative justify-between ">
+              <h1 className=" text-[1.4rem] md:text-[1.8rem] font-semibold tracking-[3px] text-blueRoom  ">
                 {roomItem.name}
               </h1>
-              <span className=" text-[#848484] tracking-[0px] whitespace-nowrap mt-3  ">
+              <span className=" text-[#848484] md:relative absolute left-0 bottom-[-20px] text-[0.8rem] md:text-[1rem] tracking-[0px] whitespace-nowrap mt-3  ">
                 {roomItem.timesince_field} ago
               </span>
             </div>
@@ -162,7 +162,7 @@ const Room = () => {
                 {roomItem.host.username}
               </Link>
             </div>
-            <div className="room-dec-cont">
+            <div className="room-dec-cont hidden md:block">
               <span className=" text-[#979797] italic font-bold text-[1.45rem] opacity-70 ">
                 Description
               </span>
@@ -170,13 +170,13 @@ const Room = () => {
                 {roomItem.description}
               </p>
             </div>
-            <div className="messages-container mt-2 w-full pt-[38px] rounded-[16px] overflow-scroll bg-[#040404] ">
-              <div className=" messages-list px-[30px] flex flex-col gap-2 flex-grow mb-12 ">
+            <div className="messages-container md:mt-2 mt-6 w-full h-full pt-[38px] rounded-[16px] overflow-scroll bg-[#040404] ">
+              <div className=" messages-list px-3 md:px-[30px] flex flex-col gap-2 flex-grow mb-12 ">
                 {messages.length === 0 ? <NoMessages /> : messages}
               </div>
             </div>
             <form
-              className=" mx-[50px] pl-4 bg-[#797979] absolute bottom-[20px] left-0 flex right-0 rounded-[16px] "
+              className=" mx-8 md:mx-[50px] text-[0.8rem] md:text-[1rem] pl-4 bg-[#797979] absolute bottom-[20px] left-0 flex right-0 rounded-[16px] "
               onSubmit={handleSubmit}
             >
               <input
@@ -191,11 +191,11 @@ const Room = () => {
                 placeholder="Write your message here..."
               />
               <button
-                className=" bg-blueRoom text-lg text-gray-200 font-semibold rounded-[16px] flex gap-1 items-center rounded-l-none px-4  "
+                className=" bg-blueRoom text-[0.9rem] md:text-lg text-gray-200 font-semibold rounded-[16px] flex gap-1 items-center rounded-l-none px-4  "
                 type="submit"
               >
                 <span>Send</span>{" "}
-                <img src={sendIcon} className="w-6 mr-2" alt="" />
+                <img src={sendIcon} className="w-6 scale-75 md:scale-100 mr-2" alt="" />
               </button>
             </form>
           </div>
