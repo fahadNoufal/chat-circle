@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { setTopic } from "../../../features/topics/topicsSlice";
 
 
+const url="http://fahadnoufal.pythonanywhere.com"
 
 const Topics = () => {
     const {topics,room_count}=useLoaderData()
@@ -14,7 +15,7 @@ const Topics = () => {
     const TopicItem = ({ topic, count }) => {
         return (
           <NavLink to='/app' onClick={()=>{dispatch(setTopic(topic))}}>
-            <div  className="py-[12px] shadow-lg -ml-2 pl-[25px] pr-[14px]  flex rounded-[14px] items-center bg-gradient-to-r to-[rgba(0,0,0,0.5)] from-[rgba(0,0,0,0.15)] justify-between">
+            <div  className="py-[12px] shadow-lg ml-0 sm:-ml-2 pl-[25px] pr-[14px]  flex rounded-[14px] items-center bg-gradient-to-r to-[rgba(0,0,0,0.5)] from-[rgba(0,0,0,0.15)] justify-between">
               <span className="text-[1rem] text-[#9d9d9d] overflow-hidden whitespace-nowrap mr-3 tracking-[3px]">
                 {topic}
               </span>
@@ -42,7 +43,7 @@ const Topics = () => {
        
         <ul className=" flex flex-col  lg:min-w-[190px] gap-[14px]">
           <NavLink to='/app' onClick={()=>{dispatch(setTopic(''));navigate('/app')}}>
-            <div  className="py-[12px] shadow-lg -ml-2 pl-[25px] pr-[14px] flex rounded-[14px] items-center bg-gradient-to-r to-[rgba(117,117,117,0.5)] from-[rgba(89,89,89,0.15)] justify-between">
+            <div  className="py-[12px] shadow-lg ml-0 sm:-ml-2  pl-[25px] pr-[14px] flex rounded-[14px] items-center bg-gradient-to-r to-[rgba(117,117,117,0.5)] from-[rgba(89,89,89,0.15)] justify-between">
               <span className="text-[1rem] font-semibold text-[#189cb9] tracking-[3px]">
                 All
               </span>
@@ -63,6 +64,6 @@ export default Topics
 
 export const topicsLoader= async()=>{
     
-  const res=await fetch(`http://localhost:8000/api/topics/`)
+  const res=await fetch(`${url}/api/topics/`)
   return res.json()
 }

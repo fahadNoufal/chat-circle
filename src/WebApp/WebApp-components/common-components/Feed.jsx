@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 
+const url="http://fahadnoufal.pythonanywhere.com"
 
 const Feed = () => {
     
@@ -16,7 +17,7 @@ const Feed = () => {
     
     useEffect(()=>{
         const fetchData=async()=>{
-            const res=await fetch(`http://localhost:8000/api/rooms?q=${currentTopic}`)
+            const res=await fetch(`${url}/api/rooms?q=${currentTopic}`)
             const data=await res.json()
             setRooms(data.rooms)
         }
@@ -47,6 +48,6 @@ export default Feed
 
 export const roomsLoader= async()=>{
     
-    const res=await fetch(`http://localhost:8000/api/rooms/`)
+    const res=await fetch(`${url}/api/rooms/`)
     return res.json()
 }

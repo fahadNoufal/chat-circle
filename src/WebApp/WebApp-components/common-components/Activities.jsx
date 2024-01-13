@@ -4,7 +4,10 @@ import {Link, useLoaderData} from 'react-router-dom'
 import ProfilePic from './ProfilePic'
 import { useSelector } from 'react-redux'
 
+const url="http://fahadnoufal.pythonanywhere.com"
+
 const Activities = () => {
+
 
     const {messages}=useLoaderData()
     const profilePics=useSelector(store=>store.profile.profiles)  
@@ -66,6 +69,6 @@ export default Activities
 
 export const activitiesLoader= async()=>{
     
-    const res=await fetch(`http://localhost:8000/api/activity/`)
+    const res=await fetch(`${url}/api/activity/`)
     return res.json()
 }

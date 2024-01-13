@@ -202,7 +202,6 @@ input{
     align-items: center;
     justify-content: center;
     gap: 10px;
-    transition-duration: .5s;
   }
   
 .menu .bars {
@@ -219,35 +218,8 @@ input{
 .menu #bar1,#bar3 {
     width: 70%;
   }
-  
-.menu #checkbox:checked + .toggle .bars {
-    position: absolute;
-    transition-duration: .5s;
-  }
-  
-.menu #checkbox:checked + .toggle #bar2 {
-    transform: scaleX(0);
-    transition-duration: .5s;
-  }
-  
-.menu #checkbox:checked + .toggle #bar1 {
-    width: 100%;
-    transform: rotate(45deg);
-    transition-duration: .5s;
-  }
-  
-.menu #checkbox:checked + .toggle #bar3 {
-    width: 100%;
-    transform: rotate(-45deg);
-    transition-duration: .5s;
-  }
-  
-.menu #checkbox:checked + .toggle {
-    transition-duration: .5s;
-    transform: rotate(180deg);
-  }
 
-  .menu-container ul a{
+  .menu-container ul a, .menu-close-icon{
     /* background-color: gray; */
     border:1px solid gray;
     padding: 0.5rem 2rem;

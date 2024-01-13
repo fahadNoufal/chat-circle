@@ -21,7 +21,7 @@ const Explore = () => {
         trigger:'.explore-text',
         start:'top 80%',
         end:'bottom 20%',
-        onEnter:()=>{tl.restart()},
+        onEnter:()=>{gsap.to('.explore-text',{y:0,duration:4,ease:'power3.easeInOut',opacity:1});tl.restart()},
         onLeave:()=>{gsap.to('.explore-text',{opacity:0})},
         onEnterBack:()=>{gsap.to('.explore-text',{opacity:1})},
         onLeaveBack:()=>{gsap.to('.explore-text',{opacity:0})}
@@ -34,9 +34,9 @@ const Explore = () => {
         end:'50% 20%',
     }})
 
-    gsap.to('.explore-reveal',{y:0, duration:0.6,opacity:1,scrollTrigger:{
+    gsap.to('.explore-reveal',{y:0, duration:0.8,opacity:1,scrollTrigger:{
         trigger:'.explore-reveal',
-        start:'50% bottom',
+        start:'100% bottom',
         end:'top top',
         toggleActions:'play play play reverse'
       }})
@@ -45,14 +45,14 @@ const Explore = () => {
 
   
   return (
-    <div className=' explore relative overflow-hidden w-full mt-20 lg:mt-52   ' id= 'explore'>
+    <div className=' explore relative overflow-hidden w-full mt-20 lg:mt-52 pb-10' id= 'explore'>
         <div className=' flex justify-center absolute lg:top-8 top-20 z-[2] right-20 left-20 '>
-            <img src={explore} className=' opacity-0 explore-text lg:scale-90 sm:scale-150 scale-[2]  text-center' alt="" />
+            <img src={explore} className='explore-text opacity-0 translate-y-[50px] lg:scale-90 sm:scale-150 scale-[2]  text-center' alt="" />
         </div>
         <div className="flex justify-center pt-24">
             <img src={desktop} className='z-[5] relative lg:w-[55%]' alt="" />
         </div>
-        <div className=" explore-reveal  lg:text-[3.9rem] text-[2.3rem] text-center pt-4 translate-y-[50px] opacity-0 font-semibold">
+        <div className=" explore-reveal  lg:text-[3.9rem] text-[2.3rem] text-center pt-4 translate-y-[60px] opacity-0 font-semibold">
             <div className="text-reveal-cards  transition-transform " >
                 <span className="gradient-text">Connect </span>
                 with new  

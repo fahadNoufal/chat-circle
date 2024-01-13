@@ -41,16 +41,16 @@ const HomeScreen = () => {
                 Connect
             </span>
         </div>
-        <div className="flex relative md:flex-row md:mt-0 mt-12 flex-col flex-[2]">
-            <div className=' home-img-container md:-ml-[28%]  rounded-3xl flex justify-center md:items-center '>
+        <div className="flex relative md:flex-row md:mt-0 justify-center  flex-col flex-[2] ">
+            <div className=' home-img-container md:-ml-[28%] rounded-3xl flex justify-center md:items-center '>
                 <img src={homeImg1} className=' md:mt-20 w-full md:w-[95%] max-w-[400px] lg:max-w-[530px] xl:max-w-[650px] 2xl:max-w-[760px]' alt="" />
             </div>
-            <div className="home-text flex-grow md:-ml-[3%] md:max-w-max max-w-[400px] flex md:mt-0 mt-[-100px] md:justify-center scale-75 md:scale-90 w-full px-2 flex-col   " >
+            <div className="home-text md:-ml-[3%] md:max-w-max max-w-[400px] flex md:mt-0 mt-[-100px] md:justify-center scale-75 md:scale-90 w-full px-2 flex-col   " >
                 <div className=' relative '>
                     <span className=' absolute flex items-center w-full h-full' >
                         <span className=' lg:text-[3.5rem] text-[2.5rem] xl:text-[4.5rem] 2xl:text-[5.7rem] text-[#e6e6e6] tracking-[3px] z-[10] font-black'>THE CIRCLE</span>
                     </span>
-                    <h2 className=' anton-font xl:text-[18rem] text-[9rem] lg:text-[13rem] tracking-wider opacity-30 z-[-10] '>CC</h2>
+                    <h2 className=' anton-font xl:text-[18rem] text-[9rem] lg:text-[11rem] tracking-wider opacity-30 z-[-10] '>CC</h2>
                 </div>
                 <div className='flex pl-2  tracking-[3px] pt-10 lg:pt-5 -mt-[80px] gap-[10px] text-[1.2rem] font-bold items-center' >
                     <span className='opacity-40 '>
@@ -63,7 +63,7 @@ const HomeScreen = () => {
                         Welcome to our chat-based social media application! 
                     </span> 
                     <div className=' leading-6 mt-4' >
-                    Connect with people worldwide, share your thoughts, and engage in meaningful conversations.
+                    Connect with people worldwide <span className="hidden sm:inline-block">, share your thoughts, and engage in meaningful conversations.</span>
                     </div>
                 </span>
                 <div className=" flex text-[1.1rem] pl-2 mt-8 gap-4 md:gap-[80px]">

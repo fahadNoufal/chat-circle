@@ -9,6 +9,8 @@ import { removeUser } from "../../../features/userDetails/userSlice";
 import { useNavigate } from "react-router-dom";
 import { pushNotification } from "../../../features/pushNotification/pushNotificationSlice";
 
+const url="http://fahadnoufal.pythonanywhere.com"
+
 const Room = () => {
   const dispatch = useDispatch();
   const { roomItem, room_messages } = useLoaderData();
@@ -91,7 +93,7 @@ const Room = () => {
 
   const NoMessages = () => {
     return (
-      <div className=" tracking-wider -mb-8">
+      <div className=" tracking-wider md:pl-0 pl-4 -mb-8">
         <span>No Messages Added</span>
       </div>
     );
@@ -224,6 +226,6 @@ export default Room;
 
 export const roomLoader = async ({ params }) => {
   const { id } = params;
-  const res = await fetch(`http://localhost:8000/api/room/${id}/`);
+  const res = await fetch(`${url}/api/room/${id}/`);
   return res.json();
 };

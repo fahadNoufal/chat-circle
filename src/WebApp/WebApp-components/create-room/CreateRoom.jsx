@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { pushNotification } from '../../../features/pushNotification/pushNotificationSlice'
 import { removeUser } from '../../../features/userDetails/userSlice'
 
+const url="http://fahadnoufal.pythonanywhere.com"
 
 const CreateRoom = ({edit=false}) => {
 
@@ -21,7 +22,7 @@ const CreateRoom = ({edit=false}) => {
 
   const handleSubmit=async(e)=>{
     e.preventDefault()
-    const response=await fetch('http://localhost:8000/api/create-room/',{
+    const response=await fetch(`${url}/api/create-room/`,{
       method: 'POST',
       headers:{
         'Content-Type': 'application/json',
@@ -43,7 +44,7 @@ const CreateRoom = ({edit=false}) => {
 
   const handleEdit=async(e)=>{
     e.preventDefault()
-    const response=await fetch(`http://localhost:8000/api/update-room/${id}/`,{
+    const response=await fetch(`${url}/api/update-room/${id}/`,{
       method: 'POST',
       headers:{
         'Content-Type': 'application/json',
@@ -76,7 +77,7 @@ const CreateRoom = ({edit=false}) => {
         return navigate('/app/login/')
       }
       const fetchRoom = async()=>{
-        const response=await fetch(`http://localhost:8000/api/update-room/${id}/`,{
+        const response=await fetch(`${url}/api/update-room/${id}/`,{
           method: 'GET',
           headers:{
             'Content-Type': 'application/json',

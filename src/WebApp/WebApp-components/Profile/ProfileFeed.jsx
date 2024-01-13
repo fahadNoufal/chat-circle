@@ -4,6 +4,8 @@ import Feed from "../common-components/Feed";
 import { useLoaderData } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+const url="http://fahadnoufal.pythonanywhere.com"
+
 const ProfileFeed = () => {
 
   const profilePics=useSelector(store=>store.profile.profiles)
@@ -43,6 +45,6 @@ export default ProfileFeed;
 
 export const userLoader=async ({params})=>{
   const {id}=params
-  const res=await fetch(`http://127.0.0.1:8000/api/user/${id}/`)
+  const res=await fetch(`${url}/api/user/${id}/`)
   return res.json()
 }

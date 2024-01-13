@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,20 +12,19 @@ import { pushNotification } from '../../../features/pushNotification/pushNotific
 import wave from '../../WebApp-images/others/select-profile-wave.png'
 
 
-
+const url="http://fahadnoufal.pythonanywhere.com"
 
 const Login = () => {
 
   const dispatch=useDispatch()
 
-  const user=useSelector((state)=>(state.user.user))
+  
   const [formData,setFormData] =useState({username:'',email:'',password:'','confirm-password':'',name:'',avatar:null})
 
   const navigate=useNavigate()
 
   const [register,setRegisteer]=useState(false)
   
-  let [loading,setLoading]=useState()
 
 
 
@@ -57,7 +56,7 @@ const Login = () => {
   const handleLogin=async(e)=>{
     e.preventDefault()
     console.log({username:formData.username, password:formData.password})
-    const response=await fetch('http://localhost:8000/api/token/',{
+    const response=await fetch(`${url}/api/token/`,{
       method: 'POST',
       headers:{
         'Content-Type': 'application/json',
@@ -68,7 +67,6 @@ const Login = () => {
     if (response.status!==200){
       dispatch(pushNotification('Something went wrong'))
       return console.log('error logging in')
-
     }
 
     const data =await response.json()
@@ -77,7 +75,7 @@ const Login = () => {
       if (data && data.hasOwnProperty('access')){
         dispatch(setUser(data))
         const fetchUser=async()=>{
-          const response=await fetch('http://localhost:8000/api/current-user/',{
+          const response=await fetch(`${url}/api/current-user/`,{
             method: 'GET',
             headers:{
               'Content-Type': 'application/json',
@@ -89,7 +87,6 @@ const Login = () => {
         }
         fetchUser()
         return navigate('/app')
-
       }
       else dispatch(setUser(null))
       dispatch(pushNotification('Invalid username or password'))
@@ -99,7 +96,7 @@ const Login = () => {
 
   const handleRegister=async(e)=>{
     e.preventDefault()
-    const response=await fetch('http://localhost:8000/api/register/',{
+    const response=await fetch(`${url}/api/register/`,{
       method: 'POST',
       headers:{
         'Content-Type': 'application/json',
@@ -136,45 +133,20 @@ const Login = () => {
     
   }
 
-  const update_token= async()=>{
-    console.log("Updating token...");
-    const response=await fetch('http://localhost:8000/api/token/refresh/',{
-      method: 'POST',
-      headers:{
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({'refresh':user.refresh})
-    })
-    if (response.status!==200){
-      console.log("something went wrong")
-    }
-    const data =await response.json()
-    // console.log(jwt_decode(data.access))
-    dispatch(setUser(data))
-
-  }
+  
 
   const handleInput=(e)=>{
     const {name,value} = e.target
     setFormData((prev)=>({...prev,[name]:value}))
   }
-
-  useEffect(()=>{
-    let interval=setInterval(() => {
-      if (user){
-        update_token()
-      }
-    },1000*60*4);
-    return ()=>clearInterval(interval)
-  },[user,loading])
   
 
   return(
     <div className="">
       {settingProfile?(
       <div className=' -mt-[70px] h-[100svh] w-full relative flex flex-col overflow-hidden justify-center items-center web-app'>
-          <img src={wave} className=' absolute -z-10 top-20  left-0 right-0' alt="" />
-          <div className="bg-black px-6 md:px-[66px] relative pt-[40px] mt-16 flex flex-col justify-center items-center max-w-[530px] rounded-[20px]  ">
+          <img src={wave} className=' absolute -z-10 top-16  left-0 right-0' alt="" />
+          <div className="bg-black px-6 md:px-[66px] relative pt-[40px] mt-16 flex flex-col justify-center items-center max-w-[530px] mx-6 rounded-[20px]  ">
               <span onClick={()=>{setSettingProfile(false)}} className='-mb-1 px-4 py-2 scale-125 rounded-lg bg-black top-2 absolute left-[-90px] hover:scale-150 transition-all '>
                 <img src={backIcon} className='h-6  '  alt="" />
               </span>
@@ -194,7 +166,7 @@ const Login = () => {
                       <ProfilePic index={formData.avatar}/>
                   </span>
                   <form onSubmit={handleRegister} className='w-full flex flex-col  gap-4  -mb-2'>
-                      <input type="text" autoComplete='off' name='name' spellCheck='false' value={formData.name} onChange={handleInput} className=' rounded mt-2 w-full text-center px-4 placeholder:text-center py-2 bg-black border border-white' id='name' placeholder='Enter name...' />
+                      <input type="text" autoComplete='off' name='name' spellCheck='false' value={formData.name} onChange={handleInput} className=' rounded mt-2 w-full text-center px-4 placeholder:text-center py-2 bg-black border border-white' id='name' placeholder='Enter nickname...' />
                       <button type="submit" className=' px-4  py-[2px] w-full  bg-white text-black border border-white'>Submit</button>
                   </form>
                   <div onClick={()=>{setFormData((prev)=>({...prev,name:'',avatar:null}))}} className="rounded-full mt-[280px] cursor-pointer w-12 h-12 absolute bg-white text-black flex justify-center items-center text-2xl border border-black">
@@ -212,10 +184,10 @@ const Login = () => {
             </span>
             <button className='pl-4 -mb-2 pb-2 z-50 scale-75 md:scale-100 '><img src={backIcon} onClick={()=>{navigate(-1)}} className='w-4 mr-2' alt="" /></button>
           </div>
-          <div className=" h-full py-8 px-10   ">
+          <div className=" h-full py-8 md:px-10 px-6   ">
             <form id='create-room-form' onSubmit={(e)=>{register?handleRegisterFormSubmit(e):handleLogin(e)}}   className='flex md:text-[1.2rem]  flex-col gap-[12px] md:gap-[24px] overflow-y-scroll form-scrollbar  '>
               <div>
-                <label htmlFor="username">
+                <label htmlFor="username">  
                   Username
                 </label>
                 <input type="text" spellCheck='false' name='username' value={formData.username} onChange={handleInput} className=' w-full rounded mt-2 ' id='username' placeholder='Enter username...' />

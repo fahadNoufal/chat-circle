@@ -7,11 +7,11 @@ const Navbar = () => {
 
   return (
     <nav className=' navbar w-full text-white z-20 absolute top-0'>
-        <div className='py-6 lg:flex font-medium items-end fixed hidden  top-0 left-0 right-0'>
-            <div className=" flex flex-1 items-center opacity-0 -translate-x-[100px] nav-logo pl-[4rem] "> 
+        <div className='py-6 lg:flex font-medium items-end fixed top-0 left-0 right-0'>
+            <div className=" flex flex-1 items-center mt-6 pl-10 md:mt-0 opacity-0 -translate-x-[100px] nav-logo md:pl-[4rem] "> 
                 <img src={logo} className='h-[1.1rem] mb-1' alt="" />
             </div>
-            <div className="nav-links flex flex-[2] pr-[4rem] justify-between items-center">
+            <div className="nav-links lg:flex hidden flex-[2] pr-[4rem] justify-between items-center">
                 <ul className=' flex gap-[45%] pl-[100px]  text-[1.15rem] font-medium ' >
                     <li className=' transition-all' >
                         <Link className='cursor-pointer hover:text-yellow ' to="home-screen" spy={true} smooth={true} offset={-720} duration={1500} >

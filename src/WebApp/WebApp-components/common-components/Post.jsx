@@ -15,7 +15,7 @@ const Post = ({profile,username,timeSince,roomName,roomDescription,membersNo,top
                 <Link to={`/app/user/${hostId}/`}>
                     <span className=' text-[1.1rem] tracking-[2px] font-semibold  cursor-pointer'> {username}</span>
                 </Link>
-                <span className=' text-[12px] text-[#c0c0c0] cursor-default '>{timeSince} ago</span>
+                <span className=' text-[12px] text-[#c0c0c0] cursor-default '>{timeSince}</span>
             </div>
         </div>
         <div className="post-details flex w-full flex-col gap-[10px]">
