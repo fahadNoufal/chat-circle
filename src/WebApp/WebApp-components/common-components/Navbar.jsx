@@ -52,8 +52,6 @@ const Navbar = () => {
   useEffect(()=>{
     let interval=setInterval(() => {
       if (user){
-        console.log("--1--");
-
         update_token()
       }
     },1000*60*4);
