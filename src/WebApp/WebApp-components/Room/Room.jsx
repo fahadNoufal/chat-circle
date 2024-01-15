@@ -115,7 +115,7 @@ const Room = () => {
 
   return (
     <div className="flex justify-center h-[99svh] -mt-[75px]  overflow-hidden pt-[40px] web-app">
-      <div className="flex  justify-between max-w-[1400px] w-full px-8 gap-24 mb-4 mt-[65px]">
+      <div className="flex justify-center xl:justify-between max-w-[1400px] w-full px-4 md:px-8 gap-24 mb-4 mt-[65px]">
         <div className="room-container flex w-full flex-grow flex-col rounded-[20px] max-w-[866px] h-full relative overflow-hidden">
           <div className="flex justify-between w-full bg-[#696969] py-3 px-8 md:py-[22px] md:px-[56px]">
             <div className=" tracking-[5px] text-[1.4rem] md:text-[1.7rem] font-bold   ">
@@ -143,9 +143,9 @@ const Room = () => {
             </div>
           </div>
 
-          <div className=" md:px-[50px] px-8 gap-[10px] pt-[40px] pb-[20px] overflow-hidden flex flex-col h-full flex-grow bg-[#1e1e1e]">
+          <div className=" md:px-[50px] px-4 gap-[10px] pt-[30px] md:pt-[40px] pb-[20px] overflow-hidden flex flex-col h-full flex-grow bg-[#1e1e1e]">
             <div className="flex mb-1 relative justify-between ">
-              <h1 className=" text-[1.4rem] md:text-[1.8rem] font-semibold tracking-[3px] text-blueRoom  ">
+              <h1 className=" text-[1.2rem] mb-2 md:mb-0 md:text-[1.8rem] font-semibold tracking-[3px] text-blueRoom  ">
                 {roomItem.name}
               </h1>
               <span className=" text-[#848484] md:relative absolute left-0 bottom-[-20px] text-[0.8rem] md:text-[1rem] tracking-[0px] whitespace-nowrap mt-3  ">
@@ -153,7 +153,7 @@ const Room = () => {
               </span>
             </div>
             <div className="created-by  flex items-center gap-4 mt">
-              <span className="text-[1rem] italic tracking-[2px] text-[#c7c7c7] font-medium">
+              <span className=" text-sm md:text-[1rem] italic md:tracking-[2px] text-[#c7c7c7] font-medium">
                 Created by
               </span>
               <Link
@@ -178,7 +178,7 @@ const Room = () => {
               </div>
             </div>
             <form
-              className=" mx-8 md:mx-[50px] text-[0.8rem] md:text-[1rem] pl-4 bg-[#797979] absolute bottom-[20px] left-0 flex right-0 rounded-[16px] "
+              className=" mx-4 md:mx-[50px] text-[0.8rem] md:text-[1rem] pl-4 bg-[#797979] absolute bottom-[20px] left-0 flex right-0 rounded-[16px] "
               onSubmit={handleSubmit}
             >
               <input
@@ -189,9 +189,22 @@ const Room = () => {
                 }}
                 value={message}
                 name="message"
-                className=" bg-transparent  py-3  w-full outline-none placeholder:opacity-80 placeholder:text-white placeholder:tracking-[3px]"
+                className=" bg-transparent  py-3  w-full hidden md:block outline-none placeholder:opacity-80 placeholder:text-white placeholder:tracking-[3px]"
                 placeholder="Write your message here..."
               />
+
+              <input
+                autoComplete="off"
+                type="text"
+                onChange={(e) => {
+                  set_message(e.target.value);
+                }}
+                value={message}
+                name="message"
+                className=" bg-transparent md:hidden py-3  w-full outline-none placeholder:opacity-80 placeholder:text-white placeholder:tracking-[3px]"
+                placeholder="Type here..."
+              />
+
               <button
                 className=" bg-blueRoom text-[0.9rem] md:text-lg text-gray-200 font-semibold rounded-[16px] flex gap-1 items-center rounded-l-none px-4  "
                 type="submit"

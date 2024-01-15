@@ -8,7 +8,7 @@ import nextIcon from '../../website-images/nextIcon.svg'
 import doubleDown from '../../website-images/double-down-icon.svg'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
+import {Link} from 'react-scroll'
 
 
 const HomeScreen = () => {
@@ -67,14 +67,14 @@ const HomeScreen = () => {
                     </div>
                 </span>
                 <div className=" flex text-[1.1rem] pl-2 mt-8 gap-4 md:gap-[80px]">
-                    <div className="flex border md:border-none md:p-0 px-2 py-[2px] gap-2 md:gap-4">
+                    <Link to='join' spy={true} smooth={true} offset={-100} duration={1500}  className="flex border md:border-none md:p-0 px-2 py-[2px] gap-2 md:gap-4">
                         <img src={featuresIcon} className='md:-mt-1' alt="" />
-                        <span>Features</span>
-                    </div>
-                    <div className="md:flex gap-4 hidden">
+                        <span>Join Now</span>
+                    </Link>
+                    <a href=' ' className="md:flex gap-4 hidden">
                         <img src={contactIcon} className=' aspect-square h-[97%] ' alt="" />
                         <span>Contact</span>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>

@@ -83,7 +83,7 @@ const Navbar = () => {
             </NavLink>
           }
         </ul>
-        <div className=" bg-[#c7ca1f] flex justify-center mt-8 menu-close-icon" onClick={()=>{setShowMenu(false)}}>
+        <div className=" bg-[#794afd] flex justify-center mt-8 menu-close-icon" onClick={()=>{setShowMenu(false)}}>
           <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="white">
             <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
           </svg>
@@ -111,7 +111,7 @@ const Navbar = () => {
   //   setShowMenu(prev=>(!prev));
   // }
   return (
-    <div className="relative" onClick={()=>{}}>
+    <div className="relative" >
       <nav className="app-navbar text-[1.4rem] font-medium py-5  md:py-6 px-12  flex  items-center justify-between">
         <div className="nav-logo self-start flex">
           <Link to='/app'  >

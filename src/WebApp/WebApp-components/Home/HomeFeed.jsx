@@ -21,7 +21,7 @@ const HomeFeed = () => {
 
   const handleCreateRoom=(e)=>{
     if(!user){
-      dispatch(pushNotification("Please ogin to create your room!"))
+      dispatch(pushNotification("Please Login to create your room!"))
       return navigate('/app/login/')
     }
     return navigate('/app/create-room/')

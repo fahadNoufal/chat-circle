@@ -29,7 +29,7 @@ const Post = ({profile,username,timeSince,roomName,roomDescription,membersNo,top
                 <div className="about-post flex flex-col gap-[10px] ">
                     <h2 className=' text-[1.5rem] tracking-[2px] text-[#71bbcb] font-semibold  '>{roomName}</h2>
                     <p className=' font-normal tracking-[2px] text-[0.9rem]  '>
-                        {roomDescription}
+                        {roomDescription.slice(0,120) + ((roomDescription.length>120)?"...":"")  }
                     </p>
                 </div>
             </Link>

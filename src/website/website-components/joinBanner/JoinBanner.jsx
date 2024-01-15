@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 const JoinBanner = () => {
   return (
-    <div id='join' className='join-banner relative  '>
+    <div id='join' className='join-banner relative sm:py-4 py-28 '>
       <div className=' my-[3rem] lg:my-[15rem] relative flex flex-col justify-center'>
         <div className="lg:text-[4.8rem] text-[2.7rem] lg:mb-[5rem] mb-[2rem] font-bold lg:font-medium text-center">
           <h2>
