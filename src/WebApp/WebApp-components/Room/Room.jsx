@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ProfilePic from "../common-components/ProfilePic";
-import profile1 from "../../WebApp-images/profiles/profile7.png";
 import backIcon from "../../WebApp-images/white-back-arrow.svg";
 import sendIcon from "../../WebApp-images/sendIcon.svg";
 import { Link, useLoaderData } from "react-router-dom";

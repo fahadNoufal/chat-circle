@@ -1,7 +1,7 @@
 {
+  "homepage":"https://fahadnoufal.github.io/chat-circle/",
   "name": "chatcircle",
   "version": "0.1.0",
-  "homepage": "fahadnoufal.github.io/chat-circle/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import ProfilePic from "../ProfilePic";
 import moreIcon from '../../../WebApp-images/expand_more.svg'
