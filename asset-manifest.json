@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/fahadnoufal.github.io/chat-circle/static/css/main.575106aa.css",
-    "main.js": "/fahadnoufal.github.io/chat-circle/static/js/main.23745e0f.js",
+    "main.js": "/fahadnoufal.github.io/chat-circle/static/js/main.b367a135.js",
     "static/js/787.00537273.chunk.js": "/fahadnoufal.github.io/chat-circle/static/js/787.00537273.chunk.js",
     "static/media/create-room-head-img.svg": "/fahadnoufal.github.io/chat-circle/static/media/create-room-head-img.42b2da18c22b5f3221456c7ebc8ce8d1.svg",
     "static/media/homeImg1.png": "/fahadnoufal.github.io/chat-circle/static/media/homeImg1.b4e0377bea82af7ef532.png",
@@ -62,11 +62,11 @@
     "static/media/arrow_back_icon.svg": "/fahadnoufal.github.io/chat-circle/static/media/arrow_back_icon.1ee0282694060c185ae2e847272f34c6.svg",
     "static/media/expand_more.svg": "/fahadnoufal.github.io/chat-circle/static/media/expand_more.407f8e26fe5fee0ee56fd1563dc6bf83.svg",
     "main.575106aa.css.map": "/fahadnoufal.github.io/chat-circle/static/css/main.575106aa.css.map",
-    "main.23745e0f.js.map": "/fahadnoufal.github.io/chat-circle/static/js/main.23745e0f.js.map",
+    "main.b367a135.js.map": "/fahadnoufal.github.io/chat-circle/static/js/main.b367a135.js.map",
     "787.00537273.chunk.js.map": "/fahadnoufal.github.io/chat-circle/static/js/787.00537273.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.575106aa.css",
-    "static/js/main.23745e0f.js"
+    "static/js/main.b367a135.js"
   ]
 }
