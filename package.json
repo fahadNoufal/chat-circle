@@ -1,6 +1,6 @@
 {
-  "homepage":"https://fahadnoufal.github.io/chat-circle/",
   "name": "chatcircle",
+  "homepage":"https://fahadnoufal.github.io/chat-circle/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
