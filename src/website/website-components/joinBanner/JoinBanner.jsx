@@ -43,6 +43,7 @@ const JoinBanner = () => {
     tl.to('.redirect',{
       yPercent:-100,
       duration:0.5,
+      opacity:0,
       ease:'power3.easeOut',
     })
   },[])
