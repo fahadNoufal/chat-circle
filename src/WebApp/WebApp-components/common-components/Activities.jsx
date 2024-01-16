@@ -4,7 +4,7 @@ import {Link, useLoaderData} from 'react-router-dom'
 import ProfilePic from './ProfilePic'
 import { useSelector } from 'react-redux'
 
-const url="http://fahadnoufal.pythonanywhere.com"
+const url="https://fahadnoufal.pythonanywhere.com"
 
 const Activities = () => {
 

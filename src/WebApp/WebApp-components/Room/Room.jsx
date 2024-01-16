@@ -9,7 +9,7 @@ import { removeUser } from "../../../features/userDetails/userSlice";
 import { useNavigate } from "react-router-dom";
 import { pushNotification } from "../../../features/pushNotification/pushNotificationSlice";
 
-const url="http://fahadnoufal.pythonanywhere.com"
+const url="https://fahadnoufal.pythonanywhere.com"
 
 const Room = () => {
   const dispatch = useDispatch();

@@ -12,7 +12,7 @@ import { pushNotification } from '../../../features/pushNotification/pushNotific
 import wave from '../../WebApp-images/others/select-profile-wave.png'
 
 
-const url="http://fahadnoufal.pythonanywhere.com"
+const url="https://fahadnoufal.pythonanywhere.com"
 
 const Login = () => {
 

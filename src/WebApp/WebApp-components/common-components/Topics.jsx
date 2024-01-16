@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { setTopic } from "../../../features/topics/topicsSlice";
 
 
-const url="http://fahadnoufal.pythonanywhere.com"
+const url="https://fahadnoufal.pythonanywhere.com"
 
 const Topics = () => {
     const {topics,room_count}=useLoaderData()

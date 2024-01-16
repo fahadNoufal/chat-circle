@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { pushNotification } from '../../../features/pushNotification/pushNotificationSlice'
 import { removeUser } from '../../../features/userDetails/userSlice'
 
-const url="http://fahadnoufal.pythonanywhere.com"
+const url="https://fahadnoufal.pythonanywhere.com"
 
 const CreateRoom = ({edit=false}) => {
 

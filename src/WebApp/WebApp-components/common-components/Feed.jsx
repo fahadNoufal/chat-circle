@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 
-const url="http://fahadnoufal.pythonanywhere.com"
+const url="https://fahadnoufal.pythonanywhere.com"
 
 const Feed = () => {
     

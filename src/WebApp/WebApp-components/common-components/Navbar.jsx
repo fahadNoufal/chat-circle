@@ -11,7 +11,7 @@ import { pushNotification } from "../../../features/pushNotification/pushNotific
 import { setUser } from '../../../features/userDetails/userSlice';
 
 
-const url="http://fahadnoufal.pythonanywhere.com"
+const url="https://fahadnoufal.pythonanywhere.com"
 
 const Navbar = () => {
 
