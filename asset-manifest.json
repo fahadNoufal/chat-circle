@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/chat-circle/static/css/main.ac4456e7.css",
-    "main.js": "/chat-circle/static/js/main.441b87fe.js",
+    "main.js": "/chat-circle/static/js/main.f0d7fc21.js",
     "static/js/787.00537273.chunk.js": "/chat-circle/static/js/787.00537273.chunk.js",
     "static/media/create-room-head-img.svg": "/chat-circle/static/media/create-room-head-img.42b2da18c22b5f3221456c7ebc8ce8d1.svg",
     "static/media/homeImg1.png": "/chat-circle/static/media/homeImg1.b4e0377bea82af7ef532.png",
@@ -62,11 +62,11 @@
     "static/media/arrow_back_icon.svg": "/chat-circle/static/media/arrow_back_icon.1ee0282694060c185ae2e847272f34c6.svg",
     "static/media/expand_more.svg": "/chat-circle/static/media/expand_more.407f8e26fe5fee0ee56fd1563dc6bf83.svg",
     "main.ac4456e7.css.map": "/chat-circle/static/css/main.ac4456e7.css.map",
-    "main.441b87fe.js.map": "/chat-circle/static/js/main.441b87fe.js.map",
+    "main.f0d7fc21.js.map": "/chat-circle/static/js/main.f0d7fc21.js.map",
     "787.00537273.chunk.js.map": "/chat-circle/static/js/787.00537273.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ac4456e7.css",
-    "static/js/main.441b87fe.js"
+    "static/js/main.f0d7fc21.js"
   ]
 }
