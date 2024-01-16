@@ -7,12 +7,12 @@ const Post = ({profile,username,timeSince,roomName,roomDescription,membersNo,top
   return (
     <div className=' flex flex-col sm:flex-row gap-4 p-[30px] max-w-[940px] w-full rounded-[21px] bg-[#1e1e1e] lg:pr-[60px]'>
         <div className="post-prof -ml-2 flex gap-3 items-center sm:items-start cursor-pointer">
-            <Link to={`/app/user/${hostId}/`}>
+            <Link to={`/chat-circle/app/user/${hostId}/`}>
                 <ProfilePic profile={profile} width='60'/>
             </Link>
 
             <div className="post-author flex sm:hidden justify-between w-full items-center">
-                <Link to={`/app/user/${hostId}/`}>
+                <Link to={`/chat-circle/app/user/${hostId}/`}>
                     <span className=' text-[1.1rem] tracking-[2px] font-semibold  cursor-pointer'> {username}</span>
                 </Link>
                 <span className=' text-[12px] text-[#c0c0c0] cursor-default '>{timeSince}</span>
@@ -20,12 +20,12 @@ const Post = ({profile,username,timeSince,roomName,roomDescription,membersNo,top
         </div>
         <div className="post-details flex w-full flex-col gap-[10px]">
             <div className="post-author  justify-between items-center hidden sm:flex mt-[15px]">
-                <Link to={`/app/user/${hostId}/`}>
+                <Link to={`/chat-circle/app/user/${hostId}/`}>
                     <span className=' text-[1.1rem] tracking-[2px] font-semibold  cursor-pointer'> {username}</span>
                 </Link>
                 <span className=' text-[12px] text-[#c0c0c0] cursor-default '>{timeSince} ago</span>
             </div>
-            <Link to={`/app/room/${id}`}>
+            <Link to={`/chat-circle/app/room/${id}`}>
                 <div className="about-post flex flex-col gap-[10px] ">
                     <h2 className=' text-[1.5rem] tracking-[2px] text-[#71bbcb] font-semibold  '>{roomName}</h2>
                     <p className=' font-normal tracking-[2px] text-[0.9rem]  '>

@@ -11,7 +11,6 @@ const ProfileFeed = () => {
   const profilePics=useSelector(store=>store.profile.profiles)
 
   const {rooms,host}=useLoaderData()
-  console.log(rooms);
 
   return (
     <div className=" flex  flex-col max-w-[850px] px-10  xl:px-0">

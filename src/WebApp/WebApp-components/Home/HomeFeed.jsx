@@ -22,9 +22,9 @@ const HomeFeed = () => {
   const handleCreateRoom=(e)=>{
     if(!user){
       dispatch(pushNotification("Please Login to create your room!"))
-      return navigate('/app/login/')
+      return navigate('/chat-circle/app/login/')
     }
-    return navigate('/app/create-room/')
+    return navigate('/chat-circle/app/create-room/')
   }
 
   let searchTl=useRef()
@@ -81,6 +81,8 @@ const HomeFeed = () => {
       </div>
     );
   };
+
+
   return (
     <div className=" py-10  flex w-full max-w-[940px] items-center flex-col h-[90vh] px-10 xl:px-4 ">
        <form 

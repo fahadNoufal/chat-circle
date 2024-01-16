@@ -22,7 +22,7 @@ function App() {
   
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path='/chat-circle'>
+      <Route path='chat-circle'>
         <Route index element={<Website/>}/>
         <Route path='app' element={<Navbar/>}>
           <Route index element={<Home/>} loader={roomsLoader}/>

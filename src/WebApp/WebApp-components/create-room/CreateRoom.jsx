@@ -32,13 +32,13 @@ const CreateRoom = ({edit=false}) => {
     })
     if (response.statusText === "Unauthorized") {
       dispatch(removeUser());
-      navigate("/app/login");
+      navigate("/chat-circle/app/login");
       dispatch(pushNotification("Access token Expired . Please log in again"));
     }
     const data= await response.json()
     console.log(data)
     if(data){
-      navigate('/app')
+      navigate('/chat-circle/app')
     }
   }
 
@@ -54,7 +54,7 @@ const CreateRoom = ({edit=false}) => {
     })
     if (response.statusText === "Unauthorized") {
       dispatch(removeUser());
-      navigate("/app/login");
+      navigate("/chat-circle/app/login");
       dispatch(pushNotification("Access token Expired . Please log in again"));
     }
     const data= await response.json()
@@ -62,11 +62,11 @@ const CreateRoom = ({edit=false}) => {
     if(data){
 
       dispatch(pushNotification('Successfully updated'))
-      navigate(`/app/room/${id}/`)
+      navigate(`/chat-circle/app/room/${id}/`)
     }
     else{
       dispatch(pushNotification('Error occured during updation!'))
-      navigate(`/app/room/${id}/`)
+      navigate(`/chat-circle/app/room/${id}/`)
     }
   }
 
@@ -74,7 +74,7 @@ const CreateRoom = ({edit=false}) => {
     if (edit){
       if(!user){
         dispatch(pushNotification('Login before updating!'))
-        return navigate('/app/login/')
+        return navigate('/chat-circle/app/login/')
       }
       const fetchRoom = async()=>{
         const response=await fetch(`${url}/api/update-room/${id}/`,{
@@ -86,14 +86,14 @@ const CreateRoom = ({edit=false}) => {
         })
         if (response.status!==200) {
           dispatch(pushNotification('Something went wrong. Please try again later'))
-          return navigate(`/app/room/${id}/`)
+          return navigate(`/chat-circle/app/room/${id}/`)
         }
         
         const data= await response.json()
 
         if(currentUser.id!==data.host.id){
           dispatch(pushNotification('Only host of this room can edit!'))
-          return navigate('/app')
+          return navigate('/chat-circle/app')
         }
   
         if(data){

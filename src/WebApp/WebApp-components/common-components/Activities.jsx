@@ -15,7 +15,7 @@ const Activities = () => {
     const Activity=({profile,name,timeSince,roomName,message,user_id,roomId})=>{
     return(
         <div className="activity-item md:max-w-[280px] w-full max-w-[400px] p-[19px]  rounded-[14px] flex flex-col gap-[12px] bg-gradient-to-br from-[rgba(0,0,0,0.57)] to-[rgba(69,68,68,0.22)] ">
-            <Link className="act-profile flex gap-2 items-center" to={`/app/user/${user_id}`}>
+            <Link className="act-profile flex gap-2 items-center" to={`/chat-circle/app/user/${user_id}`}>
                 <ProfilePic profile={profile} width="50"/>
                 <div className=" flex flex-col -gap-1">
                     <h3 className=' text-lg font-medium tracking-widest'>
@@ -50,6 +50,8 @@ const Activities = () => {
         message={item.body}
     />
     ))
+
+    
 
   return (
     <div className=' w-full h-[92svh] pt-[2.9rem] gap-[4.4rem]  bg-[#1E1E1E] flex-col  items-center '>

@@ -33,7 +33,7 @@ const LeftBar = () => {
 
   const Profile=({profile,name,id})=>{
     return(
-      <Link to={`/app/user/${id}/`} className="discover-profile-item flex-col self-start justify-between items-center p-[14px] rounded-[10px] flex bg-[#040404] text-[0.8rem]" onClick={()=>{}} >
+      <Link to={`/chat-circle/app/user/${id}/`} className="discover-profile-item flex-col self-start justify-between items-center p-[14px] rounded-[10px] flex bg-[#040404] text-[0.8rem]" onClick={()=>{}} >
         <ProfilePic profile={profile} width='60' />
         <span className="discover-profile-name text-center max-w-[100px] font-bold mt-[8px]">
           {name} 
@@ -59,7 +59,7 @@ const LeftBar = () => {
         </h3>
        
         <ul className=" flex flex-col lg:min-w-[190px] gap-[14px]">
-          <li onClick={()=>{dispatch(setTopic(''));navigate('/app')}}>
+          <li onClick={()=>{dispatch(setTopic(''));navigate('/chat-circle/app')}}>
             <div  className="py-[12px] shadow-lg -ml-2 pl-[25px] pr-[14px] flex rounded-[14px] items-center bg-gradient-to-r to-[rgba(117,117,117,0.5)] from-[rgba(89,89,89,0.15)] justify-between">
               <span className="text-[1rem] font-semibold text-[#189cb9] tracking-[3px]">
                 All

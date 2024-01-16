@@ -36,9 +36,20 @@ const Feed = () => {
     topic={item.topic.name}
     profile={profilePics[item.host.avatar]}
 />)):''
+
+  const NoRooms=()=>{
+    return(
+      <div className=" text-white text-4xl mt-20">
+        No Rooms
+      </div>
+    )
+  }
+
   return (
     <div className=' flex flex-col gap-[10px] w-full items-center pb-8'>
-        {posts}
+        {/* {!posts} */}
+        {/* {posts?posts:<NoRooms/>} */}
+        {posts.length===0?<NoRooms/>:posts}
     </div>
   )
 }
