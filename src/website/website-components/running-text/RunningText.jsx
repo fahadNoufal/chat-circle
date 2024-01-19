@@ -11,7 +11,7 @@ const RunningText = () => {
     ScrollTrigger.create({
         trigger:'.running-banner-container',
         animation:tl,
-        start:'top 110%',
+        start:'top 80%',
         end:'bottom bottom',
         scrub:10,
         ease:'power3.easeInOut',

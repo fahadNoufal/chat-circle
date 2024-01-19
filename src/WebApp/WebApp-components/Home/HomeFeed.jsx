@@ -59,7 +59,7 @@ const HomeFeed = () => {
               </span>
             </div>
           </div>
-          <Link to="/app/create-room">
+          <Link to="/chat-circle/app/create-room">
             <button className="bg-[#189cb9] flex py-3  rounded-[10px] text-5xl px-3 ">
               <div className="flex justify-center min-w-[20px] md:min-w-[40px] items-center">
                 <img src={add} className="scale-150" alt="" />

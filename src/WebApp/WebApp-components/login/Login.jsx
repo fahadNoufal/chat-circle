@@ -55,7 +55,6 @@ const Login = () => {
 
   const handleLogin=async(e)=>{
     e.preventDefault()
-    console.log({username:formData.username, password:formData.password})
     const response=await fetch(`${url}/api/token/`,{
       method: 'POST',
       headers:{
@@ -65,12 +64,10 @@ const Login = () => {
 
     })
     if (response.status!==200){
-      dispatch(pushNotification('Something went wrong'))
-      return console.log('error logging in')
+      dispatch(pushNotification('Something went wrong. Please try again'))
     }
 
     const data =await response.json()
-    // console.log(jwt_decode(data.access))
 
       if (data && data.hasOwnProperty('access')){
         dispatch(setUser(data))
@@ -84,6 +81,7 @@ const Login = () => {
           })
           const cUser=await response.json()
           dispatch(setCurrentUser(cUser))
+          dispatch(pushNotification(`Successfully logged in as ${cUser.username}!`))
         }
         fetchUser()
         return navigate('/chat-circle/app')
@@ -95,6 +93,7 @@ const Login = () => {
   }
 
   const handleRegister=async(e)=>{
+    dispatch(pushNotification('Please wait...'));
     e.preventDefault()
     const response=await fetch(`${url}/api/register/`,{
       method: 'POST',
@@ -144,7 +143,7 @@ const Login = () => {
   return(
     <div className="">
       {settingProfile?(
-      <div className=' -mt-[70px] h-[100svh] w-full relative flex flex-col overflow-hidden justify-center items-center web-app'>
+      <div className=' -mt-[70px] min-h-[100svh] w-full relative flex flex-col overflow-hidden justify-center items-center web-app'>
           <img src={wave} className=' absolute -z-10 top-16  left-0 right-0' alt="" />
           <div className="bg-black px-6 md:px-[66px] relative pt-[40px] mt-16 flex flex-col justify-center items-center max-w-[530px] mx-6 rounded-[20px]  ">
               <span onClick={()=>{setSettingProfile(false)}} className='-mb-1 px-4 py-2 scale-125 rounded-lg bg-black top-2 absolute left-[-90px] hover:scale-150 transition-all '>
@@ -176,13 +175,13 @@ const Login = () => {
           )}
       </div>
     ):(
-      <div className='-mt-[70px] px-8 md:px-20 h-[100svh] w-full relative flex flex-col overflow-hidden justify-center items-center web-app'>
+      <div className='-mt-[70px] px-8 md:px-20 min-h-[100svh] w-full relative flex flex-col overflow-hidden justify-center items-center web-app'>
         <div className=" login-form-container max-w-[630px] rounded-[25px] mt-36  w-full  ">
           <div className=" bg-gradient-to-r rounded-t-[25px] to-[rgb(0,0,0)] py-4 px-10 text-[1.2rem] md:text-[1.5rem] text-[#818181] flex justify-between items-center tracking-[2px] font-semibold from-[rgba(27,27,27,0.87)] ">
             <span>
               {register?'Register':"Login"}
             </span>
-            <button className='pl-4 -mb-2 pb-2 z-50 scale-75 md:scale-100 '><img src={backIcon} onClick={()=>{navigate(-1)}} className='w-4 mr-2' alt="" /></button>
+            <button className='pl-4 -mb-2 pb-2 z-0 scale-75 md:scale-100 '><img src={backIcon} onClick={()=>{navigate(-1)}} className='w-4 mr-2' alt="" /></button>
           </div>
           <div className=" h-full py-8 md:px-10 px-6   ">
             <form id='create-room-form' onSubmit={(e)=>{register?handleRegisterFormSubmit(e):handleLogin(e)}}   className='flex md:text-[1.2rem]  flex-col gap-[12px] md:gap-[24px] overflow-y-scroll form-scrollbar  '>

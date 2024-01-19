@@ -16,12 +16,10 @@ const ProfileFeed = () => {
     <div className=" flex  flex-col max-w-[850px] px-10  xl:px-0">
       <div className="user-profile scale-[0.8] md:scale-100 flex flex-col items-center pt-[40px]">
         <ProfilePic profile={profilePics[host.avatar]} width="150" />
-        <span className=" text-[1.88rem] mt-2 tracking-[3px] font-semibold">
+        <span className=" text-[1.88rem] mt-2 tracking-[3px] font-semibold py-4">
           {host.username}
         </span>
-        <button className=" text-blueRoom mt-2 tracking-[2px] font-semibold text-[0.8rem] py-1 px-4 rounded-[6px] bg-gradient-to-r from-[rgba(255,255,255,0.31)] to-[rgba(255,255,255,0.1)] ">
-          Edit Profile
-        </button>
+
       </div>
       <div className="user-bio text-[#a1a1a1] mt-2">
         <span className=" text-lg md:text-[1.4rem] font-bold mb-[28px] tracking-[4px]">About</span>

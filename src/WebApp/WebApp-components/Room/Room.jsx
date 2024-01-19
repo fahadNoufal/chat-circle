@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ProfilePic from "../common-components/ProfilePic";
-import profile1 from "../../WebApp-images/profiles/profile7.png";
 import backIcon from "../../WebApp-images/white-back-arrow.svg";
 import sendIcon from "../../WebApp-images/sendIcon.svg";
 import { Link, useLoaderData } from "react-router-dom";
@@ -23,6 +22,18 @@ const Room = () => {
 
   const [message, set_message] = useState("");
 
+  const refreshMessages= async()=>{
+    const res = await fetch(`${url}/api/room/${roomItem.id}/`);
+    const data= await res.json();
+    //if new messages are added
+    if (data.room_messages.length !== messageList.length){
+      setMessageList(data.room_messages);
+    }
+  }
+
+  //refreshing the message list every 5s checking for new messages
+  setInterval(()=>{refreshMessages()},5000)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -30,9 +41,8 @@ const Room = () => {
       dispatch(pushNotification("You need to log in to add a message"));
       return navigate("/chat-circle/app/login");
     }
-
     const response = await fetch(
-      `http://localhost:8000/api/message/${roomItem.id}/`,
+      `${url}/api/message/${roomItem.id}/`,
       {
         method: "POST",
         headers: {
@@ -168,7 +178,7 @@ const Room = () => {
               <span className=" text-[#979797] italic font-bold text-[1.45rem] opacity-70 ">
                 Description
               </span>
-              <p className=" text-[1.05rem] mt-[10px] leading-6 italic tracking-widest ">
+              <p className=" text-[1.05rem] mt-[10px] leading-6 italic tracking-wide ">
                 {roomItem.description}
               </p>
             </div>

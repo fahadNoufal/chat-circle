@@ -41,7 +41,7 @@ h3.connect-card{
 
 .chatcircle-card{
     width: 65.63rem;
-    height: 656px;
+    /* height: 656px; */
     border-radius: 18px;
     /* font-family: 'Times New Roman', Times, serif; */
     display: flex;  
@@ -87,11 +87,11 @@ h3.connect-card{
 }
 .cc-card-screen{
     width: 100vw;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     padding: 8rem 0;
-    height: 100svh;
+    /* height: 100svh; */
 
 }
 .join-heading{
@@ -157,6 +157,10 @@ h3.connect-card{
     box-shadow: 0px 5.283px 52.82998px 0px rgba(0, 0, 0, 0.85);
 }
 
+.svg-path{
+    height: 100%;
+    width: 100%;
+}
 /* @media (min-width: 800px) {
     .chatcircle-card{
         max-width: 800px;
@@ -187,5 +191,9 @@ h3.connect-card{
     .feature-card{
         height: 800px;
         padding: 2.4rem 2rem;
+    }
+    .chatcircle-card{
+        width: auto;
+        height: auto;
     }
   }
