@@ -12,16 +12,12 @@ gsap.registerPlugin(ScrollTrigger)
 const Explore = () => {
 
   useEffect(()=>{
-    const tl=gsap.timeline({repeat:1,onComplete:()=>{gsap.set('.explore-text',{opacity:1})}})
-    tl.to('.explore-text',{opacity:1,duration:0.1,delay:0.2})
-    tl.to('.explore-text',{opacity:0,duration:0.1,delay:0.2})
 
     gsap.to('.explore-text',{opacity:1,scrollTrigger:{
-        animate:tl,
         trigger:'.explore-text',
         start:'top 80%',
         end:'bottom 20%',
-        onEnter:()=>{gsap.to('.explore-text',{y:0,duration:4,ease:'power3.easeInOut',opacity:1});tl.restart()},
+        onEnter:()=>{gsap.to('.explore-text',{y:0,duration:4,ease:'power3.easeInOut',opacity:1})},
         onLeave:()=>{gsap.to('.explore-text',{opacity:0})},
         onEnterBack:()=>{gsap.to('.explore-text',{opacity:1})},
         onLeaveBack:()=>{gsap.to('.explore-text',{opacity:0})}
