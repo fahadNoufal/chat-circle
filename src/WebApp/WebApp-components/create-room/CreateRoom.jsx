@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import backIcon from '../../WebApp-images/arrow_back_icon.svg'
-import float1 from '../../../website/website-images/create-room-floating-1.png'
-import float2 from '../../../website/website-images/create-room-floating-2.png'
-import float3 from '../../../website/website-images/create-room-floating-3.png'
-import float4 from '../../../website/website-images/create-room-floating-4.png'
+import float1 from '../../WebApp-images/create-room-floating-1.png'
+import float2 from '../../WebApp-images/create-room-floating-2.png'
+import float3 from '../../WebApp-images/create-room-floating-3.png'
+import float4 from '../../WebApp-images/create-room-floating-4.png'
 import {useNavigate, useParams} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { pushNotification } from '../../../features/pushNotification/pushNotificationSlice'
@@ -32,13 +32,13 @@ const CreateRoom = ({edit=false}) => {
     })
     if (response.statusText === "Unauthorized") {
       dispatch(removeUser());
-      navigate("/chat-circle/app/login");
+      navigate("/chat-circle/login");
       dispatch(pushNotification("Access token Expired . Please log in again"));
     }
     const data= await response.json()
     console.log(data)
     if(data){
-      navigate('/chat-circle/app')
+      navigate('/chat-circle')
     }
   }
 
@@ -54,7 +54,7 @@ const CreateRoom = ({edit=false}) => {
     })
     if (response.statusText === "Unauthorized") {
       dispatch(removeUser());
-      navigate("/chat-circle/app/login");
+      navigate("/chat-circle/login");
       dispatch(pushNotification("Access token Expired . Please log in again"));
     }
     const data= await response.json()
@@ -62,11 +62,11 @@ const CreateRoom = ({edit=false}) => {
     if(data){
 
       dispatch(pushNotification('Successfully updated'))
-      navigate(`/chat-circle/app/room/${id}/`)
+      navigate(`/chat-circle/room/${id}/`)
     }
     else{
       dispatch(pushNotification('Error occured during updation!'))
-      navigate(`/chat-circle/app/room/${id}/`)
+      navigate(`/chat-circle/room/${id}/`)
     }
   }
 
@@ -74,7 +74,7 @@ const CreateRoom = ({edit=false}) => {
     if (edit){
       if(!user){
         dispatch(pushNotification('Login before updating!'))
-        return navigate('/chat-circle/app/login/')
+        return navigate('/chat-circle/login/')
       }
       const fetchRoom = async()=>{
         const response=await fetch(`${url}/api/update-room/${id}/`,{
@@ -86,14 +86,14 @@ const CreateRoom = ({edit=false}) => {
         })
         if (response.status!==200) {
           dispatch(pushNotification('Something went wrong. Please try again later'))
-          return navigate(`/chat-circle/app/room/${id}/`)
+          return navigate(`/chat-circle/room/${id}/`)
         }
         
         const data= await response.json()
 
         if(currentUser.id!==data.host.id){
           dispatch(pushNotification('Only host of this room can edit!'))
-          return navigate('/chat-circle/app')
+          return navigate('/chat-circle')
         }
   
         if(data){

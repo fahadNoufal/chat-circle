@@ -6,7 +6,7 @@ import HomeFeed from './HomeFeed'
 const Home = () => {
 
   return (
-    <div className='app-home relative flex justify-between gap-4 web-app  '>
+    <div className='app-home relative flex justify-between gap-4 web-app'>
         <LeftBar/>
         <HomeFeed/>        
         <RightBar/>

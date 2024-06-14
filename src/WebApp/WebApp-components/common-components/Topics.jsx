@@ -3,6 +3,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setTopic } from "../../../features/topics/topicsSlice";
+import { pushNotification } from '../../../features/pushNotification/pushNotificationSlice';
 
 
 const url="https://fahadnoufal.pythonanywhere.com"
@@ -14,8 +15,8 @@ const Topics = () => {
 
     const TopicItem = ({ topic, count }) => {
         return (
-          <NavLink to='/chat-circle/app' onClick={()=>{dispatch(setTopic(topic))}}>
-            <div  className="py-[12px] shadow-lg ml-0 sm:-ml-2 pl-[25px] pr-[14px]  flex rounded-[14px] items-center bg-gradient-to-r to-[rgba(0,0,0,0.5)] from-[rgba(0,0,0,0.15)] justify-between">
+          <NavLink to='/chat-circle' onClick={()=>{dispatch(setTopic(topic));dispatch(pushNotification(`Showing rooms with topic '${topic}'`))}}>
+            <div  className="py-[12px] shadow-lg ml-0 sm:-ml-2 pl-[25px] pr-[14px]  flex rounded-[14px] items-center bg-gradient-to-r to-[rgba(0,0,0,0.5)] from-[rgba(0,0,0,0.15)] justify-between cursor-pointer">
               <span className="text-[1rem] text-[#9d9d9d] overflow-hidden whitespace-nowrap mr-3 tracking-[3px]">
                 {topic}
               </span>
@@ -32,7 +33,7 @@ const Topics = () => {
       )):''
 
   return (
-    <div className=" topic-container-page w-full py-[2.9rem] h-[91svh]  gap-[0.5rem] flex bg-[#1E1E1E] md:hidden flex-col items-center ">
+    <div className="  topic-container-page w-full py-[2.9rem] h-[91svh]  gap-[0.5rem] flex bg-[#1E1E1E] md:hidden flex-col items-center ">
       <div className="topic-page-section h-full overflow-scroll text-left w-[70%] ">
         <h1 className=" opacity-75 text-[1.9rem] -ml-1 font-medium tracking-[3px]">
             Topics
@@ -42,7 +43,7 @@ const Topics = () => {
         </h3>
        
         <ul className=" flex flex-col  lg:min-w-[190px] gap-[14px]">
-          <NavLink to='/chat-circle/app' onClick={()=>{dispatch(setTopic(''));navigate('/chat-circle/app')}}>
+          <NavLink to='/chat-circle' onClick={()=>{dispatch(setTopic(''));navigate('/chat-circle')}}>
             <div  className="py-[12px] shadow-lg ml-0 sm:-ml-2  pl-[25px] pr-[14px] flex rounded-[14px] items-center bg-gradient-to-r to-[rgba(117,117,117,0.5)] from-[rgba(89,89,89,0.15)] justify-between">
               <span className="text-[1rem] font-semibold text-[#189cb9] tracking-[3px]">
                 All

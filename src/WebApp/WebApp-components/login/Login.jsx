@@ -84,7 +84,7 @@ const Login = () => {
           dispatch(pushNotification(`Successfully logged in as ${cUser.username}!`))
         }
         fetchUser()
-        return navigate('/chat-circle/app')
+        return navigate('/chat-circle')
       }
       else dispatch(setUser(null))
       dispatch(pushNotification('Invalid username or password'))

@@ -64,17 +64,17 @@ const Navbar = () => {
       <div className="menu-container px-10 py-10 items-center">
 
         <ul className='flex flex-col gap-8 text-center' onClick={()=>{setShowMenu(false)}} >
-          <NavLink className='menu-item' to='/chat-circle/app'>
+          <NavLink className='menu-item' to='/chat-circle'>
               Home
           </NavLink>
-          <NavLink className='menu-item' to='/chat-circle/app/topics'>Topics</NavLink>
-          <NavLink className='menu-item' to= '/chat-circle/app/activities'>Activities</NavLink>
+          <NavLink className='menu-item' to='/chat-circle/topics'>Topics</NavLink>
+          <NavLink className='menu-item' to= '/chat-circle/activities'>Activities</NavLink>
           {
           user?<NavLink className='menu-item' to={`user/${jwt_decode(user.access).user_id}`}>
             Profile
           </NavLink>:''
           }
-          <NavLink className='menu-item' to={'/chat-circle/app/create-room'}>Create Room</NavLink>
+          <NavLink className='menu-item' to={'/chat-circle/create-room'}>Create Room</NavLink>
           {
             user?<NavLink onClick={()=>{dispatch(removeUser());dispatch(pushNotification('Logged out Successfully'))}}>
               logout
@@ -114,12 +114,12 @@ const Navbar = () => {
     <div className="relative" >
       <nav className="app-navbar text-[1.4rem] font-medium py-5  md:py-6 px-12  flex  items-center justify-between">
         <div className="nav-logo self-start flex">
-          <Link to='/chat-circle/app'  >
+          <Link to='/chat-circle'  >
             <img src={ccLogo} className=" h-11 max-w-[140px]  lg:max-w-[200px]  cursor-pointer" onClick={()=>{dispatch(setTopic(''))}} alt="" />
           </Link>
         </div>
         <ul className="md:flex hidden gap-[3.56rem] text-[1rem] text-[#D7D7D7] font-normal ">
-          <NavLink to='/chat-circle/app'>
+          <NavLink to='/chat-circle'>
             Home
           </NavLink>
           {

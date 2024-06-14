@@ -22,9 +22,9 @@ const HomeFeed = () => {
   const handleCreateRoom=(e)=>{
     if(!user){
       dispatch(pushNotification("Please Login to create your room!"))
-      return navigate('/chat-circle/app/login/')
+      return navigate('/chat-circle/login/')
     }
-    return navigate('/chat-circle/app/create-room/')
+    return navigate('/chat-circle/create-room/')
   }
 
   let searchTl=useRef()
@@ -40,16 +40,30 @@ const HomeFeed = () => {
   useEffect(()=>{
     searchTopic&&searchTl.current.play();
     searchTopic===''&&searchTl.current.reverse()
+    // gsap.to('.welcome-container',{
+    //   opacity:0,
+    //   duration:0.5,
+    //   ease:'power3.easeInOut',
+    //   delay:1
+    // })
+    
+    // gsap.to('.redirect',{
+    //   yPercent:-100,
+    //   duration:0.5,
+    //   opacity:0,
+    //   delay:0.5,
+    //   ease:'power3.easeOut',
+    // })
   },[searchTopic])
   
   const LoggedInUserWedget = ({ username,profile}) => {
     return (
       <div className="w-full">
        
-      <div className="flex md:gap-[27px] gap-[10px] md:flex-row flex-col mb-5">
+      <div className="flex md:gap-[27px] gap-[10px] md:flex-row flex-col mb-5 select-none">
         <div className="flex   justify-between py-4 gap-8 flex-1 bg-black px-5 md:px-10 items-center rounded-[20px]  ">
           <div className="font-semibold flex flex-col -mt-1 ">
-            <div className="  md:text-[1.38rem] flex gap-2">
+            <div className="  md:text-[1.38rem] flex gap-2 ">
               <span className="text-[#ffc953]">{room_count}</span> rooms
               available
             </div>
@@ -59,7 +73,7 @@ const HomeFeed = () => {
               </span>
             </div>
           </div>
-          <Link to="/chat-circle/app/create-room">
+          <Link to="/chat-circle/create-room">
             <button className="bg-[#189cb9] flex py-3  rounded-[10px] text-5xl px-3 ">
               <div className="flex justify-center min-w-[20px] md:min-w-[40px] items-center">
                 <img src={add} className="scale-150" alt="" />
@@ -84,19 +98,13 @@ const HomeFeed = () => {
 
 
   return (
-    <div className=" py-10  flex w-full max-w-[940px] items-center flex-col h-[90vh] px-10 xl:px-4 ">
+    <div className=" py-10  flex w-full max-w-[940px] items-center flex-col h-[90vh] px-6 md:px-10 xl:px-4 ">
        <form 
           method="GET" 
-          target="/app" 
+          target="" 
           onSubmit={(e)=>{e.preventDefault();dispatch(setTopic(searchTopic));setSearchTopic('')}} 
           className=" search-room-bar mb-3 relative overflow-x-clip rounded-[30px] items-center py-[12px] pl-8  flex "
         >
-          
-          {/* <svg className="search-icon" aria-hidden="true" viewBox="0 0 24 24">
-              <g>
-                  <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
-              </g>
-          </svg> */}
           <input
             autoComplete="off"
             name="q"
@@ -117,12 +125,6 @@ const HomeFeed = () => {
             type="text"
             className=" pl-2 md:hidden bg-transparent w-full outline-none placeholder:text-[#595959] text-[#c9c9c9] placeholder:tracking-[1.5px] placeholder:font-medium placeholder:text-[1rem] text-[1rem]"
           />
-          {/* <button
-            type="submit"
-            className="py-1 pr-8 pl-4  flex items-center gap-1 bg-yellow text-black rounded-[20px] mr-1 text-[1rem] "
-          >
-            Search Rooms...
-          </button> */}
           <button type="submit" className="absolute topic-search-icon px-3 py-[0.2rem] rounded-md bg-blueRoom opacity-0 right-2 translate-x-[150%]">
               <img src={searchIcon} alt="" />
           </button>

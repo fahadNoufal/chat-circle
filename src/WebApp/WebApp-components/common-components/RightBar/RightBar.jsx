@@ -11,8 +11,8 @@ const RightBar = () => {
 
   const Activity=({profile,name,timeSince,roomName,message,user_id,roomId})=>{
     return(
-        <div className="activity-item max-w-[280px] p-[19px]  rounded-[14px] flex flex-col gap-[12px] bg-gradient-to-br from-[rgba(0,0,0,0.57)] to-[rgba(69,68,68,0.22)] ">
-            <Link className="act-profile flex gap-2 items-center" to={`/chat-circle/app/user/${user_id}`}>
+        <div className="activity-item max-w-[280px] w-full p-[19px]  rounded-[14px] flex flex-col gap-[12px] bg-gradient-to-br from-[rgba(0,0,0,0.57)] to-[rgba(69,68,68,0.22)] ">
+            <Link className="act-profile flex gap-2 items-center" to={`/chat-circle/user/${user_id}`}>
                 <ProfilePic profile={profile} width="50"/>
                 <div className=" flex flex-col -gap-1">
                     <h3 className=' text-lg font-medium tracking-widest'>
